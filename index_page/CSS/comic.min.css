@@ -1,0 +1,109 @@
+/**
+ * Minified by jsDelivr using clean-css v5.3.2.
+ * Original file: /gh/Tomotoes/font@master/comic.css
+ *
+ * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
+ */
+@font-face {
+    font-family: 'Comic Sans MS';
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light.eot');
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light.woff') format('woff'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light.ttf') format('truetype');
+    font-weight: 100
+}
+
+@font-face {
+    font-family: 'Comic Sans MS';
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light-Oblique.eot');
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light-Oblique.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light-Oblique.woff') format('woff'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light-Oblique.ttf') format('truetype');
+    font-weight: 100;
+    font-style: oblique
+}
+
+@font-face {
+    font-family: 'Comic Sans MS';
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular.eot');
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular.woff') format('woff'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular.ttf') format('truetype');
+    font-weight: 300
+}
+
+@font-face {
+    font-family: 'Comic Sans MS';
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular-Oblique.eot');
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular-Oblique.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular-Oblique.woff') format('woff'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular-Oblique.ttf') format('truetype');
+    font-weight: 300;
+    font-style: oblique
+}
+
+@font-face {
+    font-family: 'Comic Sans MS';
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold.woff') format('woff'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold.ttf') format('truetype');
+    font-weight: 700
+}
+
+@font-face {
+    font-family: 'Comic Sans MS';
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold-Oblique.eot');
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold-Oblique.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold-Oblique.woff') format('woff'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold-Oblique.ttf') format('truetype');
+    font-weight: 700;
+    font-style: oblique
+}
+
+@font-face {
+    font-family: cursive;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light.eot');
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light.woff') format('woff'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light.ttf') format('truetype');
+    font-weight: 100
+}
+
+@font-face {
+    font-family: cursive;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light-Oblique.eot');
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light-Oblique.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light-Oblique.woff') format('woff'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Light-Oblique.ttf') format('truetype');
+    font-weight: 100;
+    font-style: oblique
+}
+
+@font-face {
+    font-family: cursive;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular.eot');
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular.woff') format('woff'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular.ttf') format('truetype');
+    font-weight: 300
+}
+
+@font-face {
+    font-family: cursive;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular-Oblique.eot');
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular-Oblique.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular-Oblique.woff') format('woff'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Regular-Oblique.ttf') format('truetype');
+    font-weight: 300;
+    font-style: oblique
+}
+
+@font-face {
+    font-family: cursive;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold.woff') format('woff'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold.ttf') format('truetype');
+    font-weight: 700
+}
+
+@font-face {
+    font-family: cursive;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold-Oblique.eot');
+    src: url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold-Oblique.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold-Oblique.woff') format('woff'), url('https://cdn.jsdelivr.net/gh/Tomotoes/font/fonts/ComicNeue-Bold-Oblique.ttf') format('truetype');
+    font-weight: 700;
+    font-style: oblique
+}
+
+/*# sourceMappingURL=/sm/63b7262162ae6ad7d96ad0a701ca6b8cf8ce52857b9f81b6e0aa287b155b38e8.map */
