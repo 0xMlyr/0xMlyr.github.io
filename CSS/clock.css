@@ -1,0 +1,76 @@
+.clock {
+	/* 使用 css 变量，方便统一修改大小颜色等 */
+	/* 数字基础色 */
+	--color: #545458;
+	/* 数字亮起来的红色 */
+	--color-active: #ff00f2;
+	/* 数字单个 led灯 的厚度 */
+	--number-thickness: 2px;
+	/* 数字单个 led灯 的长度 */
+	--number-length: 7px;
+	/* 数字单个 led灯 之间的间距 */
+	--number-gap: 0.7px;
+  
+	/* 平铺开父盒子内所有数字元素 */
+	display: flex;
+	gap: calc(var(--number-thickness) * 1.5);
+  
+	/* 父盒子大背景色 */
+	background-color: #00000000;
+	/* 父盒子内部撑开的距离 */
+	padding: calc(var(--number-thickness) * 2);
+	/* 父盒子外部阴影 */
+	box-shadow: 0 6vmin 20vmin rgba(0, 0, 0, 0.6);
+
+  }
+  
+  .colon {
+	/* 两点冒号，竖向排开 */
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	/* 间距按大致比例加减 */
+	gap: calc(var(--number-thickness) * 2.5);
+  }
+  .colon::before,
+  .colon::after {
+	content: "";
+  
+	/* 两个点的宽高，圆，背景色 */
+	width: var(--number-thickness);
+	height: var(--number-thickness);
+	border-radius: 50%;
+	background-color: var(--color-active);
+	/* 灯光亮起的一点扩散阴影 */
+	filter: drop-shadow(0 0 1vmin var(--color-active));
+  }
+  
+  .clock .number {
+	display: grid;
+	/* 数字单个 led灯 之间的间距 */
+	gap: var(--number-gap);
+	/* 使用 grid-template 来布局 7个led灯 的位置和大小 */
+	grid-template:
+	  ".... r1c2 ...." var(--number-thickness)
+	  "r2c1 .... r2c3" var(--number-length)
+	  ".... r3c2 ...." var(--number-thickness)
+	  "r4c1 .... r4c3" var(--number-length)
+	  ".... r5c2 ...." var(--number-thickness) /
+	  var(--number-thickness) var(--number-length) var(--number-thickness);
+  }
+  
+  .clock .number span {
+	/* 每个 led灯的元素绑定 grid-template 模板的名称，和上面对应 */
+	grid-area: var(--ga-name);
+	/* 数字基础色 */
+	background-color: var(--color);
+	/* 圆角 */
+	border-radius: var(--number-thickness);
+  }
+  
+  .clock .number span.active {
+	/* 数字亮起来的颜色 */
+	background-color: var(--color-active);
+	/* 灯光亮起的一点扩散阴影 */
+	filter: drop-shadow(0 0 0.75vmin var(--color-active));
+  }
