@@ -1617,10 +1617,10 @@ body.is-preload #footer {
 	top: 0;
 	left: 0;
 	width: 100%;
-	color: #ff1493;
+	color: #2fff14;
 	overflow: hidden;
-	border-right: 4px solid #ff1493;
-	filter: drop-shadow(0 0 5px #ff1493) drop-shadow(0 0 25px #ff1493);
+	border-right: 4px solid #2fff14;
+	filter: drop-shadow(0 0 5px #2fff14) drop-shadow(0 0 25px #2fff14);
 	animation: animate 3s linear infinite;
 }
 @keyframes animate {
