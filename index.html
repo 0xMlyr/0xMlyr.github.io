@@ -1,156 +1,407 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh_CN">
 
 <head>
-	<title>MLYR | NewBlog</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,viewport-fit=cover">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<link rel="icon" href="./IMG/home.png">
-	<meta name="keywords" content="MLYR,慕灵一儒">
-	<link rel="stylesheet" href="./CSS/comic.min.css">
-	<link rel="stylesheet" href="./CSS/style.css">
 
-	<link rel="manifest" href="./manifest.json">
+    <title>慕灵一儒の主页</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="./IMG/home.png">
+    <meta name="keywords" content="MLYR,慕灵一儒">
+    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/FONT.css">
+    <link rel="stylesheet" href="./CSS/load.css">
+    
+    <noscript>
+        <link rel="stylesheet" href="./CSS/noscript.css">
+    </noscript>
+
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        a {
+            border-bottom: none;
+        }
+    </style>
 
 </head>
 
-</html>
+<body class="is-preload">
 
-<body>
-	<main>
-		<div class="content content-intro">
-			<div class="content-inner">
-				<canvas id="background"></canvas>
-				<div class="wrap fade">
-					<!--首页右上GitHub图标-->
-					<a class="github-corner" href="https://github.com/0xMlyr" aria-label="View source on GitHub"
-						target="_blank" rel="noopener noreferrer">
-						<svg width="80" height="80" viewBox="0 0 250 250"
-							style="fill:transparent; color:#ffffff; position: absolute; top: 0; border: 0; right: 0;"
-							aria-hidden="true">
-							<path d="M0 0 115 115 130 115 142 142 250 250 250 0Z"></path>
-							<path class="octo-arm"
-								d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2"
-								fill="currentColor" style="transform-origin: 130px 106px;"></path>
-							<path class="octo-body"
-								d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4L133.7 101.6C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8Z"
-								fill="currentColor"></path>
-						</svg></a>
-					<style>
-						.github-corner:hover .octo-arm {
-							animation: octocat-wave 560ms ease-in-out
-						}
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-						@keyframes octocat-wave {
+        <!-- Header -->
+        <header id="header">
+            <div class="logo">
+                <a href="#headlogo">
+                    <img src="./IMG/head.jpg" id="logo" class="logo">
+                </a>
+            </div>
 
-							0%,
-							100% {
-								transform: rotate(0)
-							}
+            <div class="content">
+                <div class="inner">
+                    <h2>风雨暗千家 · 诗酒趁年华</h2>
+                    <h3>慕 灵 一 儒</h3>
+                </div>
+            </div>
 
-							20%,
-							60% {
-								transform: rotate(-25deg)
-							}
+            <nav>
+                <ul>
+                    <li><a href="#intro"><i class="fas fa-circle-question"></i>介绍</a></li>
+                    <li><a href="#work"><i class="fas fa-circle-info"></i>服务</a></li>
+                    <li><a href="#about"><i class="fas fa-at"></i>关于</a></li>
+                    <li><a href="#link"><i class="fab fa-qq"></i>联系</a></li>
+                    <li><a href="#what"><i class="fab fa-scribd"></i>问题</a></li>
+                </ul>
+            </nav>
 
-							40%,
-							80% {
-								transform: rotate(10deg)
-							}
-						}
+            <div class="content">
+                <div class="inner">
+                    <h2>MY.Service.😉😎🤯</h2>
+                    <p>我 的 服 务 项<br> </p>
+                </div>
+            </div>
 
-						@media (max-width:500px) {
-							.github-corner:hover .octo-arm {
-								animation: none
-							}
+            <nav>
+                <ul>
+                    <!--target="_blank"-->
+                    <li><a href="#error"><i class="fas fa-bars"></i>次元导航</a></li>
+                    <li><a href="#error"><i class="fas fa-blog"></i>慕灵者说</a></li>
+                    <li><a href="#error"><i class="fas fa-box"></i>七号仓库</a></li>
+                    <li><a href="#error"><i class="fab fa-google"></i>谷歌镜像</a></li>
+                    <li><a href="#error"><i class="fas fa-a"></i>自由视界</a></li>
+                    <li><a href="#error"><i class="fas fa-image"></i>神秘事务</a></li>
+                </ul>
+            </nav>
 
-							.github-corner .octo-arm {
-								animation: octocat-wave 560ms ease-in-out
-							}
-						}
-					</style>
-					<!--首页标题-->
-					<h2 class="content-title">MLYR's<br>e-Business Card</h2>
-					<h3 class="content-subtitle" original-content="Get more contact information.🥳">&nbsp;</h3>
-					<a class="enter">Enter</a>
-					<div class="arrow arrow-1"></div>
-					<div class="arrow arrow-2"></div>
-				</div>
-			</div>
-			<div class="shape-wrap">
-				<svg class="shape" width="100%" height="100vh" preserveAspectRatio="none" viewBox="0 0 1440 800"
-					xmlns:pathdata="http://www.codrops.com/">
-					<path
-						d="M-44-50C-52.71 28.52 15.86 8.186 184 14.69 383.3 22.39 462.5 12.58 638 14 835.5 15.6 987 6.4 1194 13.86 1661 30.68 1652-36.74 1582-140.1 1512-243.5 15.88-589.5-44-50Z"
-						pathdata:id="M -44,-50 C -137.1,117.4 67.86,445.5 236,452 435.3,459.7 500.5,242.6 676,244 873.5,245.6 957,522.4 1154,594 1593,753.7 1793,226.3 1582,-126 1371,-478.3 219.8,-524.2 -44,-50 Z">
-					</path>
-				</svg>
-			</div>
-		</div>
-		<div class="content content-main">
-			<div id="card">
-				<div class="card-inner fade">
-					<header>
-						<img src="./IMG/avatar.jpg" width="100" height="100" alt="avatar">
-						<h1 data-translate="name">M L Y R</h1>
-						<h2 id="signature" data-translate="signature">Expand the world's horizons,🗺️<br>
-							Let's be each other's eyes.👀</h2>
-					</header>
-					
-					<div style="background-color: #272727; border: 1.5px solid rgb(165, 165, 165); text-align: left; padding-left: 15px; padding-right: 15px; border-radius: 15px;">
-						<p style="color: rgb(255, 255, 255);">▍E-mali: mlyr.255.1024@gmail.com<br>
-							▍X(Twitter): @MLYR1024<br>
-							▍Telegram: @mlyr1024<br></p>
+            <!--<nav>
+                <ul>
+                    <li>
 
-						<p style=" text-align: justify; font-size: 15px;">🟠Dear stranger. We come from different "worlds", but we share the same desire to expand our horizons. I'd like to be your online friend.<br>
-							🟡Email communication is preferred. We can be pen pals, speak freely. Just talk about everything we are interested in.
-							<br>🟢X or Telegram is a good place for us to daily chat, and you can also see my hobbies or usual life.</p>
-					</div>
+                        <p class="special-p" style="margin: 11px 10px 9px 10px;">Time</p>
 
-					<p><a style="font-size: 12px;">© Copyright 2020-Now: </a>
-						<a href="https://0xmlyr.github.io"
-							style="font-size: 12px; color: rgb(110, 110, 110);"><strong>MLYR</strong> from China</a>
-					</p>
-				</div>
-			</div>
-		</div>
-		<script src="./JS/anime.min.js"></script>
-		<script>window.$ = selector => document.querySelector(selector)
-			const getOriginalContent = selector => $(selector).getAttribute("original-content")
-			window.subtitle = getOriginalContent(".content-subtitle")
-			window.signature = getOriginalContent("#signature")
-			window.config = {
-				SIM_RESOLUTION: 128,
-				DYE_RESOLUTION: 1024,
-				CAPTURE_RESOLUTION: 512,
-				DENSITY_DISSIPATION: 1,
-				VELOCITY_DISSIPATION: 0.2,
-				PRESSURE: 0.8,
-				PRESSURE_ITERATIONS: 20,
-				CURL: 30,
-				SPLAT_RADIUS: 0.25,
-				SPLAT_FORCE: 6000,
-				SHADING: true,
-				COLORFUL: true,
-				COLOR_UPDATE_SPEED: 10,
-				PAUSED: false,
-				BACK_COLOR: { r: 30, g: 31, b: 33 },
-				TRANSPARENT: false,
-				BLOOM: true,
-				BLOOM_ITERATIONS: 8,
-				BLOOM_RESOLUTION: 256,
-				BLOOM_INTENSITY: 0.4,
-				BLOOM_THRESHOLD: 0.8,
-				BLOOM_SOFT_KNEE: 0.7,
-				SUNRAYS: true,
-				SUNRAYS_RESOLUTION: 196,
-				SUNRAYS_WEIGHT: 1.0,
-			}
-		</script>
-		<script src="./JS/main.js"></script>
-		<script src="./JS/background.js"></script>
-		<script src="./JS/registerSW.js"></script>
-		<script src="./JS/log.min.js"></script>
-	</main>
+                    </li>
+                    <li>
+
+                        <div class="clock" style="margin: 10px 6px 10px 6px;" class="special-p">
+                            <div class="number">
+                                <span style="--ga-name:r1c2"></span>
+                                <span style="--ga-name:r2c1"></span>
+                                <span style="--ga-name:r2c3"></span>
+                                <span style="--ga-name:r3c2"></span>
+                                <span style="--ga-name:r4c1"></span>
+                                <span style="--ga-name:r4c3"></span>
+                                <span style="--ga-name:r5c2"></span>
+                            </div>
+                            <div class="number">
+                                <span style="--ga-name:r1c2"></span>
+                                <span style="--ga-name:r2c1"></span>
+                                <span style="--ga-name:r2c3"></span>
+                                <span style="--ga-name:r3c2"></span>
+                                <span style="--ga-name:r4c1"></span>
+                                <span style="--ga-name:r4c3"></span>
+                                <span style="--ga-name:r5c2"></span>
+                            </div>
+
+                            <div class="colon"></div>
+
+                            <div class="number">
+                                <span style="--ga-name:r1c2"></span>
+                                <span style="--ga-name:r2c1"></span>
+                                <span style="--ga-name:r2c3"></span>
+                                <span style="--ga-name:r3c2"></span>
+                                <span style="--ga-name:r4c1"></span>
+                                <span style="--ga-name:r4c3"></span>
+                                <span style="--ga-name:r5c2"></span>
+                            </div>
+                            <div class="number">
+                                <span style="--ga-name:r1c2"></span>
+                                <span style="--ga-name:r2c1"></span>
+                                <span style="--ga-name:r2c3"></span>
+                                <span style="--ga-name:r3c2"></span>
+                                <span style="--ga-name:r4c1"></span>
+                                <span style="--ga-name:r4c3"></span>
+                                <span style="--ga-name:r5c2"></span>
+                            </div>
+
+                            <div class="colon"></div>
+
+                            <div class="number">
+                                <span style="--ga-name:r1c2"></span>
+                                <span style="--ga-name:r2c1"></span>
+                                <span style="--ga-name:r2c3"></span>
+                                <span style="--ga-name:r3c2"></span>
+                                <span style="--ga-name:r4c1"></span>
+                                <span style="--ga-name:r4c3"></span>
+                                <span style="--ga-name:r5c2"></span>
+                            </div>
+                            <div class="number">
+                                <span style="--ga-name:r1c2"></span>
+                                <span style="--ga-name:r2c1"></span>
+                                <span style="--ga-name:r2c3"></span>
+                                <span style="--ga-name:r3c2"></span>
+                                <span style="--ga-name:r4c1"></span>
+                                <span style="--ga-name:r4c3"></span>
+                                <span style="--ga-name:r5c2"></span>
+                            </div>
+                        </div>
+                        <script src="./js/clock.js"></script>
+                        <link rel="stylesheet" href="./CSS/clock.css">
+
+                    </li>
+                </ul>
+            </nav>-->
+
+            <div id="app"></div>
+
+        </header>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!--Logo-->
+            <article id="headlogo">
+                <div class="site-title">MLYR's WebSite</div>
+                <div class="site-sub-title">不忘初心 • 一生浪漫</div>
+
+                <div class="eyebox">
+                    <div class="eyes"></div>
+                </div>
+
+                <span class="image main">
+                    <img src="./IMG/headbg.png">
+                </span>
+            </article>
+
+            <!-- Intro -->
+            <article id="intro">
+                <h2 class="major">Introductions</h2>
+                <span class="image main">
+                    <img src="./IMG/WindBo.png">
+                </span>
+                <p>无可奈何花落去 · 似曾相识燕归来 · 小园香径独徘徊<br>
+                    希望我们不会为自己的过去后悔......</p>
+                <div align="right">
+                    <a href="#work">查看说明</a>
+                </div>
+            </article>
+
+            <!-- Work -->
+            <article id="work">
+                <h2 class="major">Service</h2>
+                <p>这是我的一些网站，附上一些说明：<br>
+                    <!--次元导航：暂未开放 敬请期待<br>
+                    慕灵者说：暂未开放 敬请期待<br>
+                    七号仓库：暂未开放 敬请期待<br>
+                    谷歌镜像：暂未开放 敬请期待<br>
+                    自由视界：暂未开放 敬请期待<br>
+                    神秘事务：暂未开放 敬请期待<br>-->
+                </p>
+                <img src="./IMG/gpt-4-motif.svg">
+                <p><br><strong>希望对你有所帮助</strong></p>
+                <div align="right">
+                    <a href="#about">不懂问我？</a>
+                </div>
+            </article>
+
+            <!-- About -->
+            <article id="about">
+                <h2 class="major">About</h2>
+                <div class="funbox" align="center">
+                    <a>_i'm</a>
+                    <span style="--i:0" data-text="Student_">Student_</span>
+                    <span style="--i:1" data-text="Engineer_">Engineer_</span>
+                    <span style="--i:2" data-text="Artist_">Artist_</span>
+                </div>
+                <div align="right">
+                    <a href="#link">联系我们</a>
+                </div>
+            </article>
+
+            <!--Contact-->
+            <article id="link">
+                <h2 class="major">Contact</h2>
+                <span class="image main">
+                    <img src="./IMG/mlyrtop.png" usemap="#keymap">
+                </span>
+                <div align="right">
+                    <!--<p>扫🐴获取联系方式</p>-->
+                    <a href="#what">其他问题</a>
+                </div>
+            </article>
+
+            <!--Q&A-->
+            <article id="what">
+                <h2 class="major">Q&A</h2>
+                <div align="left">
+
+                    <p><strong>Q: 我是谁？</strong><br>
+                        A: 当然是学生啦！ <br>
+
+                        <strong>Q: 建站做甚么？</strong><br>
+                        A: 在网络世界开辟属于自己の自由国度。<br>
+
+                        <strong>Q: 有多余的钱怎么办？</strong><br>
+                        A: 我很穷,可以打给我👉️<a href="#sponsored"><strong>￥</strong></a>👈️
+                    </p>
+                </div>
+            </article>
+
+            <!--Warn-->
+            <article id="warn">
+                <h2 class="major">友情的警告⚠️</h2>
+
+                <p>
+                    请确保您自认为自己可以访问，<br>并具备自主决策的能力。<br>
+                </p>
+
+                <div id="details" onclick="toggleDetails()">
+                    <p>点击查看明细</p>
+                </div>
+                <div id="detailsopen">
+                    <p>本域名(mlyr.top)旗下网站仅对港澳台区域的用户开放，<br>🇨中国大陆用户谢绝访问。<br></p>
+                </div>
+                <script>
+                    window.addEventListener('DOMContentLoaded', function () {
+                        var detailsOpen = document.getElementById('detailsopen');
+                        detailsOpen.classList.remove('open');
+                    });
+
+                    function toggleDetails() {
+                        var detailsOpen = document.getElementById('detailsopen');
+
+                        if (detailsOpen.classList.contains('open')) {
+                            detailsOpen.style.height = '0';
+                            detailsOpen.style.opacity = 0;
+                            setTimeout(function () {
+                                detailsOpen.classList.remove('open');
+                            }, 2000);
+                        } else {
+                            detailsOpen.classList.add('open');
+                            detailsOpen.style.height = detailsOpen.scrollHeight + 'px';
+                            setTimeout(function () {
+                                detailsOpen.style.opacity = 1;
+                            }, 0);
+                        }
+                    }
+                </script>
+
+            </article>
+
+            <!-- ERROR 502 -->
+            <article id="error">
+                <h2 class="major">ERROR</h2>
+                <div class="loader"></div>
+
+                <p><br>暂未开放 敬请期待</p>
+            </article>
+
+            <!--sponsored-->
+            <article id="sponsored">
+                <h2 class="major">感谢赞助</h2>
+                <p>本网站运维费用27.8$/年</p>
+                <span class="image main">
+                    <img src="./IMG/money.png"></span>
+                <p>#二维码丢失</p>
+            </article>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+
+            <div class="content">
+                <div class="inner">
+                </div>
+            </div>
+
+            <!--Bottom copyright information-->
+            <div class="copyright">
+                <p>© Copyright by <strong><a href="http://www.mlyr.top"
+                    style="text-decoration:none;">MLYR</a></strong> 2020-2025<br>
+                    <a style="text-decoration:none;">Open theme by <strong>Horizon</strong></a><br>
+                    <a href="https://cloudflare.com" target="_blank"
+                        style="text-decoration:none;">DNS working by <strong>Cloudflare</strong></a><br>
+                    <a target="_blank" style="text-decoration:none;">最后更新于: 2024.05.12.01.47.32</a>
+                </p>
+
+                <!--Bottom logo display-->
+                <div class="caution">
+                    <a href="#warn">
+                        <img src="./IMG/warn.png">
+                    </a>
+                    <div class="caution_word">
+                        <p style="float: right;"><strong>WARNING</strong><br>
+                            <a style="font-size: 20px;"><strong>###</strong></a><br>Our Dream
+                        </p>
+                    </div>
+                </div>
+                <div class="copyname">
+                    <img src="./IMG/logo.png" class="seal">
+                    <img src="./IMG/writer.png" class="writer">
+                </div>
+            </div>
+
+            <!-- 响应式占位容器 -->
+            <div class="emptybox"></div>
+
+        </footer>
+
+    </div>
+
+    <!-- BG -->
+    <div id="bg"></div>
+
+    <!-- Scripts -->
+    <script src="./JS/jquery.min.js"></script>
+    <script src="./JS/browser.min.js"></script>
+    <script src="./JS/breakpoints.min.js"></script>
+    <script src="./JS/util.js"></script>
+    <script src="./JS/main.js"></script>
+    <script src="./JS/cplayer.js"></script>
+
+    <!--Music-->
+    <script>
+        let player = new cplayer({
+            element: document.getElementById('app'),
+            zoomOutKana: true,
+            dark: true,
+            volume: 0.15,
+            autoplay: true,
+            playlist: [{
+                src: './BackMusic/所爱隔山海.mp3',
+                poster: 'https://p4.music.126.net/tdBhA4_YvSfaJBfBUtJAFQ==/109951167870491074.jpg',
+                name: 'ハサミガール',
+                artist: 'ハコニワリリィ',
+                lyric: '[00:00.959]iPhoneのパスワードは最近変えたのは\n[00:06.963]何でだろうね何でだろうね不思議だね\n[00:12.965]記念日でもないのになぜプレゼントなの？\n[00:18.708]何でだろうね何でだろうね不思議だね\n[00:25.221]誰その女？\n[00:26.954]AM3時\n[00:28.206]現行犯\n[00:31.459]ハサミガール髪をチョキチョキチョキ\n[00:34.218]未練がある君をチョキチョキチョキ\n[00:37.461]約束したでしょう？\n[00:39.967]２度目はも無理よ\n[00:43.474]強い子演じてみたけど\n[00:46.463]内心ちょっぴりshock shock shock\n[00:49.222]「死にたい」のはこっちよ\n[00:52.205]でも私がいないとダメな子\n[00:56.725]もうやめてね？\n[00:59.974]…許したげる\n[01:01.965]\n[01:13.211]iPhoneをお風呂場にも持っていくようになったね\n[01:19.209]何でだろうね何でだろうね不思議だね\n[01:25.211]最近よく飲みに行くね　お酒苦手でしょ？\n[01:30.968]何でだろうね何でだろうね不思議だね\n[01:37.204]またあの女？\n[01:38.715]AM6時\n[01:40.212]朝帰り\n[01:43.463]\n[01:43.978]ハサミガール髪も伸ぴてきて\n[01:46.459]やり直せた思ってたのに\n[01:49.455]やくそくしたでしょ？\n[01:51.963]３度目とか論外\n[01:55.456]弱い子演じてみたけど\n[01:58.219]無意味な時間がtick tack tack\n[02:01.459]「泣きたい」のはこっちよ\n[02:04.209]でも私がいないとダメな子\n[02:08.715]もうやめてね？\n[02:12.959]…許したげる\n[02:16.713]\n[02:37.472]惚れた私がバカだった\n[02:40.217]\n[02:40.710]ハサミガール髪をチョキチョキチョキ\n[02:43.464]未練がある君をチョキチョキチョキ\n[02:46.462]情で許すとか\n[02:49.223]そんなのくそくらえ\n[02:52.475]強い子演じてみたけど\n[02:55.217]内心ちょっぴりshock shock shock\n[02:58.464]「死にたい」のはこっちよ\n[03:01.217]もう連絡しないわさよなる\n[03:05.965]縁切りましょ\n[03:08.714]\n[03:08.965]チョキチョキチョキ\n[03:13.222]\n[03:22.472]ハサミガール髪をチョキチョキチョキ\n[03:28.453]未練もないきみをチョキチョキチョキ'
+            },
+            {
+                src: './BackMusic/所念皆星河.mp3',
+                poster: 'https://p3.music.126.net/W35p4QxHFsDoQJSH45Lrjg==/109951168153944857.jpg',
+                name: '霞がついてくる',
+                artist: 'ヰ世界情緒',
+                lyric: '[00:01.934]幽霊屋敷の窓からひとつ\n[00:05.365]知らない誰かの声がする\n[00:09.088]「眼を向けたら戻れはしない」\n[00:12.809]お筆のせんせが言っていた\n[00:16.244]はじめはなんだかわからなかった\n[00:19.969]もやもやがかったお友達\n[00:23.687]一人でいるのを赦してくれた\n[00:27.121]静かな交差点\n[00:29.704]\n[00:29.993]青空は深い青　到底ここらで買える絵の具じゃ\n[00:37.433]描ききるったって無理だよ　だからみんな空を見てる\n[00:44.032]\n[00:44.606]黒か白か問われないこと\n[00:48.039]それがなんだか心地良かった\n[00:52.327]君の顔も(るるるる)君の声も\n[00:56.054]霞がついてくる\n[00:59.784]\n[01:28.994]行雲淑女の秘密を隠せ\n[01:32.723]非のあるところに煙あり\n[01:36.452]「あなたにどこかで触れた気がする」\n[01:39.883]輪廻のおままごと\n[01:42.177]\n[01:42.751]それもそうかこの街じゃ　今更人で居ようとするのも\n[01:50.173]馬鹿みたいだって思うんだよ　だから僕は君を見てる\n[01:56.755]\n[01:57.330]黒と黒が混ざり合うこと\n[02:00.769]それは大概意味がなかった\n[02:05.058]好きなとこも(るるるる)それ以外も\n[02:08.776]同じになったから\n[02:12.504]\n[02:33.986]春風のうららに満ちて　この街の霞が消えてしまったら\n[02:42.288]また逃げてしまおう　その時選ぶのは\n[02:47.726]\n[02:48.013]どんな色かわからないけど\n[02:51.739]受け入れてあげられるように\n[02:55.170]僕たちは旅をしている\n[02:59.751]顔を隠したまま\n[03:06.909]霞がついてくる'
+            },
+            {
+                src: './BackMusic/仲夏夜的猫.mp3',
+                poster: 'https://p4.music.126.net/JaE9FykaLU8dRSbNlucbZg==/109951163538935511.jpg',
+                name: 'ナツゾラ',
+                artist: 'Honeycomebear',
+                lyric: '[00:13.675]風鈴の音てﾞ　瞼をこすった \n[00:20.166]さいこﾞの季節　後悔しないてﾞ\n[00:27.051]アイスかﾞ溶ける 雫かﾞ落ちる\n[00:32.439]タワーの上 ゆれるオーロラ 夏かﾞやってくる\n[00:40.916]\n[00:51.789]何する？スイカ割りは\n[00:55.023]平凡たﾞって トﾞキトﾞキする　　　　　　　\n[00:58.328]飛ひﾞ込め 海の色を変えろ\n[01:01.653]忘れたくない青になる\n[01:05.123]そうたﾞ ラムネの味　\n[01:08.076]難解なんたﾞ 生きてくように\n[01:11.450]ふたりはすﾞっと一緒たﾞったのに\n[01:14.719]泣くな、あたしの夏空\n[01:18.889]\n[01:21.024]浴衣の足を カランと鳴らした\n[01:28.226]君の欠伸かﾞ 聞こえた気かﾞした\n[01:35.183]煙の匂い 振り向いた夜空\n[01:40.582]高く 高く登った音 花火かﾞひらいた\n[01:49.323]\n[01:59.894]見ててね 金魚すくい\n[02:03.159]簡単たﾞって言わないてﾞね\n[02:06.471]肝試しはコワイものはﾞかり\n[02:09.688]いやいや、君のコトしﾞゃない\n[02:13.252]なんて、伝わらない\n[02:16.149]探してたって いるわけない\n[02:19.587]ひとりは慣れてたはすﾞなのに\n[02:22.802]泣くな、あたしの夏空\n[02:25.792]永遠のしあわせなら\n[02:29.101]単純なんたﾞ　魅せてあけﾞる\n[02:32.403]わたあめ雲かき分けた先\n[02:35.799]夏はとﾞこかてﾞ待っている\n[02:39.211]せーのてﾞ、追いかけっこ\n[02:42.038]ケﾞームオーハﾞーたﾞ このセカイは\n[02:45.511]飛ひﾞ込め 海の色を変えろ\n[02:48.720]泣くな、あたしの夏空\n[02:52.656]'
+            },
+            ]
+        })
+
+        function playMusic() {
+            player.play()
+            document.removeEventListener('click', playMusic);
+        }
+        document.addEventListener('click', playMusic);
+    </script>
+
 </body>
+
+</html>
