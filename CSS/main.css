@@ -1416,7 +1416,6 @@ body.is-preload #header .content .inner {
 	letter-spacing: 0.2rem;
 	font-size: 0.6rem;
 	opacity: 0.75;
-	margin-bottom: 0;
 }
 
 body.is-article-visible #footer {
@@ -1436,11 +1435,18 @@ body.is-preload #footer {
 }
 
 .copyright {
-	width: 345px;
-	height: 120px;
+	width: 310px;
+	height: 90px;
 	margin: 0 auto;
 	position: relative;
+	margin-bottom: 0;
 }
+
+@media (max-width: 474px) { /* 假设手机模式的最大宽度为767px */
+	.copyright {
+	  margin-bottom: 50px;
+	}
+  }
 
 /*细则*/
 
@@ -1462,44 +1468,30 @@ body.is-preload #footer {
 .caution {
 	position: absolute;
 	transform: translate(-50%, -50%);
+	margin-top: 5px;
 }
 
 @media (max-width: 480px) {
 	.caution {
-		width: 180px;
-		height: 73px;
-		top: 115%;
-		right: 14%;
+		width: 85px;
+		height: 75px;
+		top: 14%;
+		right: 40%;
 	}
 }
 
 @media (min-width: 481px) {
 	.caution {
-		width: 180px;
-		height: 73px;
-		top: 33%;
-		right: 75%;
+		width: 85px;
+		height: 75px;
+		top: 28%;
+		right: 85%;
 	}
 }
 
-.caution_word {
-	height: 100%;
-	width: auto;
-	border-right: 1px solid white;
-	margin-right: 70px;
-	padding-right: 10px;
-}
-
 .caution img {
-	/* margin-right: 10px; */
-	height: 100%;
-	width: auto;
-	float: right;
-	transition: box-shadow 0.5s ease;
-}
-
-.caution img:hover {
-	box-shadow: 0 0 20px 1px rgb(255, 255, 255);
+	width: 50px;
+	height: 48px;
 }
 
 .copyname {
@@ -1511,48 +1503,31 @@ body.is-preload #footer {
 	.copyname {
 		width: 40px;
 		height: 73px;
-		top: 115%;
-		right: 17%;
+		top: 17%;
+		right: 26%;
 	}
 }
 
 @media (min-width: 481px) {
 	.copyname {
-		width: 155px;
+		width: 60px;
 		height: 73px;
-		top: 33%;
-		right: -70%;
+		top: 32%;
+		right: -30%;
 	}
 }
 
 .seal {
-	/* margin-right: 10px; */
+	/* 点击外发光 */
 	height: 100%;
 	width: auto;
 	float: left;
-	transition: box-shadow 0.5s ease;
+	/*transition: box-shadow 0.5s ease;*/
 }
 
-.seal:hover {
+/*.seal:hover {
 	box-shadow: 0 0 20px 1px rgb(255, 255, 255);
-}
-
-.writer {
-	width: auto;
-	float: right;
-}
-
-@media (max-width: 480px) {
-	.writer {
-		height: 0px;
-	}
-}
-
-@media (min-width: 481px) {
-	.writer {
-		height: 100%;
-	}
-}
+}*/
 
 .emptybox {
 	width: 100%;
