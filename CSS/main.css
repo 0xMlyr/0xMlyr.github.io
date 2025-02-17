@@ -906,7 +906,7 @@ table.alt tfoot {
 		-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 		-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 		transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-		background-image: url("./ph.png");
+		background-image: url("https://api.suyanw.cn/api/comic2");
 		/*background-image: url("https://tvax2.sinaimg.cn/mw2048/008uAIdSgy1h9dvyxe5vej31y72q8npg.jpg");*/
 		background-position: center;
 		background-size: cover;
