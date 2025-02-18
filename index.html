@@ -365,13 +365,13 @@
 
             <script>
                  function getQuote() {
-    const apiUrl = 'https://api.suyanw.cn/api/gushi.php?type=json'; // 替换为您的 API 接口 URL
+    const apiUrl = 'https://api.suyanw.cn/api/gushi.php?type=json';
 
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
         const quote = data.text;
-        if (quote.length <= 23) {
+        if (quote.length <= 25) {
           displayQuote(quote);
         } else {
           getQuote(); // 重新获取语录
