@@ -1527,7 +1527,8 @@ body.is-preload #footer {
 }
 
 .image-container:hover img {
-	transform: rotate(15deg);/* 鼠标悬停时旋转 */
+	transform: rotate(15deg);
+	/* 鼠标悬停时旋转 */
 	transform-origin: center;
 }
 
@@ -1574,6 +1575,21 @@ body.is-preload #footer {
 	width: 100%;
 	height: auto;
 	border-radius: 5px;
+}
+
+.funboxbase {
+	width: 100%;
+	height: 180px;
+	margin-top: 0px;
+	margin-bottom: 30px;
+
+	/*border: 1px solid #2fff14;
+	border-radius: 6px;
+	box-shadow: 0 0 10px 5px rgba(47, 255, 20, 0.3);*/
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .funbox {

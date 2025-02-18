@@ -200,7 +200,7 @@
             <!-- About -->
             <article id="about">
                 <h2 class="major">About</h2>
-                <div style="width: 100%; height: auto; margin-top: 20px; margin-bottom: 15px;">
+                <div class="funboxbase">
                     <div class="funbox" align="center">
                         <a>_i'm</a>
                         <span style="--i:0" data-text="Student_">Student_</span>
@@ -208,6 +208,7 @@
                         <span style="--i:2" data-text="Artist_">Artist_</span>
                     </div>
                 </div>
+
                 <div align="right">
                     <a href="#link">联系我们</a>
                 </div>
@@ -218,7 +219,7 @@
                 <h2 class="major">Contact</h2>
 
                 <img src="./IMG/gpt-4-motif.svg">
-                <p style="margin-top: 15px;"><strong>E-mail:</strong> mlyr.255.1024@gmail.com<br>
+                <p style="margin-top: 20px;"><strong>E-mail:</strong> mlyr.255.1024@gmail.com<br>
                     <strong>X(Twitter):</strong> @MLYR1024
                 </p>
 
@@ -267,7 +268,7 @@
                 </div>
                 <div id="detailsopen">
                     <p>本域名(mlyr.top)仅对港澳台区域的用户开放，<br>中国大陆用户谢绝访问。<br></p>
-                    
+
                 </div>
                 <script>
                     window.addEventListener('DOMContentLoaded', function () {
@@ -355,6 +356,44 @@
                 </p>
 
             </div>
+
+            <p id="sentence" style="margin-bottom: 15px; letter-spacing: 0.2rem;
+            font-size: 0.6rem;
+            opacity: 0.75;"></p>
+
+            <script>
+                fetch('https://api.suyanw.cn/api/gushi.php?type=json') // 替换为你的 API 接口地址
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`); // 检查响应状态
+                        }
+                        return response.json(); // 将响应转换为 JSON 格式
+                    })
+                    .then(data => {
+                        // 从 JSON 数据中提取句子
+                        const sentence = data.sentence || data.content || data.text; // 根据 API 返回的 JSON 结构，选择正确的字段
+                        if (!sentence) {
+                            throw new Error('Could not extract sentence from API response.');
+                        }
+
+                        // 获取 <p> 元素
+                        const p = document.getElementById('sentence'); // 假设 <p> 元素的 id 为 "sentence"
+                        if (!p) {
+                            throw new Error('Could not find <p> element with id "sentence".');
+                        }
+
+                        // 将句子插入到 <p> 元素中
+                        p.textContent = sentence;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching sentence:', error);
+                        // 处理错误，例如显示错误信息
+                        const p = document.getElementById('sentence');
+                        if (p) {
+                            p.textContent = 'Failed to load sentence.';
+                        }
+                    });
+            </script>
 
         </footer>
 
