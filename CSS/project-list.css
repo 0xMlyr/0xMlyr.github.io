@@ -1,0 +1,9 @@
+.project_box {
+    width: 100%;
+    height: 85px;
+    margin-bottom: 20px;
+    border: 1px solid white;
+    /* 设置白色边框，1px 粗细 */
+    border-radius: 5px;
+    /* 设置 5px 圆角 */
+}
