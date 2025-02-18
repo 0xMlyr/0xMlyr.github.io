@@ -275,9 +275,10 @@ i {
 p {
 	margin: 0 0 2rem 0;
 }
+
 .special-p {
 	margin-bottom: 0;
-  }
+}
 
 h1,
 h2,
@@ -893,7 +894,8 @@ table.alt tfoot {
 	-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
 	/*background-image: url("https://moe.jitsu.top/api/?sort=pc");*/
-	background-image: url("./pc.jpg");
+	background-image: url("https://api.suyanw.cn/api/comic.php");
+	/*background-image: url("./pc.jpg");*/
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -906,7 +908,7 @@ table.alt tfoot {
 		-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 		-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 		transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-		background-image: url("./ph.png");
+		background-image: url("https://api.suyanw.cn/api/comic2");
 		/*background-image: url("https://tvax2.sinaimg.cn/mw2048/008uAIdSgy1h9dvyxe5vej31y72q8npg.jpg");*/
 		background-position: center;
 		background-size: cover;
@@ -1442,11 +1444,13 @@ body.is-preload #footer {
 	margin-bottom: 0;
 }
 
-@media (max-width: 474px) { /* 假设手机模式的最大宽度为767px */
+@media (max-width: 474px) {
+
+	/* 假设手机模式的最大宽度为767px */
 	.copyright {
-	  margin-bottom: 50px;
+		margin-bottom: 50px;
 	}
-  }
+}
 
 /*细则*/
 
@@ -1515,6 +1519,16 @@ body.is-preload #footer {
 		top: 32%;
 		right: -30%;
 	}
+}
+
+.image-container img {
+	transition: transform 0.3s ease;
+	/* 添加过渡效果，使旋转更平滑 */
+}
+
+.image-container:hover img {
+	transform: rotate(15deg);/* 鼠标悬停时旋转 */
+	transform-origin: center;
 }
 
 .seal {
@@ -1598,6 +1612,7 @@ body.is-preload #footer {
 	filter: drop-shadow(0 0 5px #2fff14) drop-shadow(0 0 25px #2fff14);
 	animation: animate 3s linear infinite;
 }
+
 @keyframes animate {
 
 	0%,
@@ -1612,21 +1627,19 @@ body.is-preload #footer {
 	}
 }
 
-.site-title
-{
+.site-title {
 	font-weight: bold;
 	font-size: 1.5rem;
 	text-align: center;
 }
-.site-sub-title
-{
+
+.site-sub-title {
 	font-size: 1rem;
 	text-align: center;
 	line-height: 1.5;
 }
 
-.toollist{
+.toollist {
 	height: 44px;
 	width: 145px;
 }
-
