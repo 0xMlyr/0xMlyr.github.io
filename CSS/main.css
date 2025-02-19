@@ -1579,8 +1579,8 @@ body.is-preload #footer {
 
 .funboxbase {
 	width: 100%;
-	height: 180px;
-	margin-top: 0px;
+	height: auto;
+	margin-top: 30px;
 	margin-bottom: 30px;
 
 	/*border: 1px solid #2fff14;
@@ -1658,4 +1658,26 @@ body.is-preload #footer {
 .toollist {
 	height: 44px;
 	width: 145px;
+}
+
+.quote {
+	letter-spacing: 0.2rem;
+	font-size: 0.6rem;
+	opacity: 0.75;
+}
+
+.quote p{
+	margin-bottom: 0rem;
+}
+
+@media (max-width: 480px) {
+	.quote {
+		margin-bottom: 1rem;
+	}
+}
+
+@media (min-width: 481px) {
+	.quote {
+		margin-bottom: 0;
+	}
 }

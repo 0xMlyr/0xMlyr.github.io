@@ -200,6 +200,9 @@
             <!-- About -->
             <article id="about">
                 <h2 class="major">About</h2>
+
+                <img src="https://api.suyanw.cn/api/ipimg.php" style="width: 100%; height: auto;">
+
                 <div class="funboxbase">
                     <div class="funbox" align="center">
                         <a>_i'm</a>
@@ -222,6 +225,7 @@
                 <p style="margin-top: 20px;"><strong>E-mail:</strong> mlyr.255.1024@gmail.com<br>
                     <strong>X(Twitter):</strong> @MLYR1024
                 </p>
+
 
                 <div align="right">
                     <a href="#what">其他问题</a>
@@ -357,39 +361,37 @@
 
             </div>
 
-<div id="quote-container" style="margin-bottom: 15px; letter-spacing: 0.2rem;
-            font-size: 0.6rem;
-            opacity: 0.75;">
-</div>
-
+            <div id="quote-container" class="quote">
+            </div>
 
             <script>
-                 function getQuote() {
-    const apiUrl = 'https://api.suyanw.cn/api/gushi.php?type=json';
+                function getQuote() {
+                    const apiUrl = 'https://api.suyanw.cn/api/gushi.php?type=json';
+                    /*const apiUrl = 'https://api.suyanw.cn/api/yiyan.php?type=js';*/
 
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        const quote = data.text;
-        if (quote.length <= 25) {
-          displayQuote(quote);
-        } else {
-          getQuote(); // 重新获取语录
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching quote:', error);
-      });
-  }
+                    fetch(apiUrl)
+                        .then(response => response.json())
+                        .then(data => {
+                            const quote = data.text;
+                            if (quote.length <= 25) {
+                                displayQuote(quote);
+                            } else {
+                                getQuote(); // 重新获取语录
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error fetching quote:', error);
+                        });
+                }
 
-  function displayQuote(quote) {
-    const quoteContainer = document.getElementById('quote-container');
-    const p = document.createElement('p');
-    p.textContent = quote;
-    quoteContainer.appendChild(p);
-  }
+                function displayQuote(quote) {
+                    const quoteContainer = document.getElementById('quote-container');
+                    const p = document.createElement('p');
+                    p.textContent = quote;
+                    quoteContainer.appendChild(p);
+                }
 
-  getQuote(); // 页面加载时获取并显示语录
+                getQuote(); // 页面加载时获取并显示语录
             </script>
 
         </footer>
