@@ -10,8 +10,8 @@
     <meta name="keywords" content="MLYR,慕灵一儒">
     <link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="./CSS/FONT.css">
-    <link rel="stylesheet" href="./CSS/load.css">
-    <link rel="stylesheet" href="./CSS/project-list.css">
+    <link rel="stylesheet" href="./CSS/load.css"><!--ERROR加载动画-->
+    <link rel="stylesheet" href="./CSS/project-list.css"><!--项目列表-->
 
     <noscript>
         <link rel="stylesheet" href="./CSS/noscript.css">
@@ -175,7 +175,7 @@
                     <img src="./IMG/headbg.png">
                 </span>
 
-                <div align="right">
+                <div align="right" class="nextinfo">
                     <a href="#work">查看说明</a>
                 </div>
             </article>
@@ -192,7 +192,7 @@
                     在线项目：#<br>
                 </p>
                 <p><strong>希望对你有所帮助</strong></p>
-                <div align="right">
+                <div align="right" class="nextinfo">
                     <a href="#about">不懂问我？</a>
                 </div>
             </article>
@@ -202,12 +202,21 @@
                 <h2 class="major">About</h2>
 
                 <!--IP签名-->
-                <span class="image main" style="margin-bottom: 0;">
-                    <img src="https://api.szfx.top/ipinfo/">
-                </span>
-                <p style="margin-top: 5px; margin-bottom: 15px;">* 推荐使用Chrome或edge访问。</p>
+                <p style="margin-bottom: 15px;"><strong>欢迎访问本站，以下是访问档案：</strong></p>
 
-                <div align="right">
+                <div id="infoContainer" class="infoContainer">
+                    <p>✔️当前时间：<span id="time"></span></p>
+                    <p>✔️操作系统：<span id="osInfo"></span></p>
+                    <p>✔️浏览器：<span id="browserInfo"></span></p>
+                    <p>✔️访问者IP：<span id="ipAddress"></span></p>
+                    <p>✔️IP地址：<span id="ipLocation"></span></p>
+                    <p>✔️连接速度：<span id="netSpeed"></span></p>
+                </div>
+
+                <p style="margin-top: 15px; margin-bottom: 15px;"><strong>* 推荐使用Chrome或edge访问。</strong></p>
+                <p style="font-size: 0.6rem; opacity: 0.3; margin-bottom: 1rem;"><span id="userAgentInfo"></span></p>
+
+                <div align="right" class="nextinfo">
                     <a href="#link">联系我们</a>
                 </div>
             </article>
@@ -221,7 +230,7 @@
                     <strong>X(Twitter):</strong> @MLYR1024
                 </p>
 
-                <div align="right">
+                <div align="right" class="nextinfo">
                     <a href="#what">其他问题</a>
                 </div>
             </article>
@@ -229,7 +238,7 @@
             <!--Q&A-->
             <article id="what">
                 <h2 class="major">Q&A</h2>
-                <div align="left">
+                <div align="left" class="nextinfo">
 
                     <p><strong>Q: 我是谁？</strong><br>
                         A: 当然是学生啦！ <br>
@@ -350,7 +359,7 @@
                         from <strong>Pinterest</strong></a><br>
                     <a href="https://cloudflare.com" target="_blank" style="text-decoration:none;">DNS working by
                         <strong>Cloudflare</strong></a><br>
-                    <a target="_blank" style="text-decoration:none;">最后更新于: 2024.05.12.01.47.32</a>
+                    <a style="text-decoration:none;">最后更新于: 2024.05.12.01.47.32</a>
                 </p>
 
             </div>
@@ -402,6 +411,7 @@
     <script src="./JS/util.js"></script>
     <script src="./JS/main.js"></script>
     <script src="./JS/cplayer.js"></script>
+    <script src="./JS/ip-record.js"></script>
 
     <!--Music-->
     <script>
@@ -441,15 +451,6 @@
         }
         document.addEventListener('click', playMusic);
     </script>
-
-    <!--<div class="funboxbase">
-                    <div class="funbox" align="center">
-                        <a>_i'm</a>
-                        <span style="--i:0" data-text="Student_">Student_</span>
-                        <span style="--i:1" data-text="Engineer_">Engineer_</span>
-                        <span style="--i:2" data-text="Artist_">Artist_</span>
-                    </div>
-                </div>-->
 
 </body>
 

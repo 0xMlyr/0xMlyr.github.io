@@ -1401,6 +1401,24 @@ body.is-preload #header .content .inner {
 
 }
 
+.nextinfo{
+	margin-bottom: 0;
+}
+@media screen and (max-width: 736px) {
+	.nextinfo{
+		margin-bottom: 10px;
+	}
+}
+
+/* IP info */
+.infoContainer{
+	margin: 0;
+}
+
+.infoContainer p{
+	margin: 0;
+}
+
 /* Footer */
 
 #footer {
@@ -1560,7 +1578,7 @@ body.is-preload #footer {
 	}
 }
 
-.conbox {
+/*.conbox {
 	height: auto;
 	margin-bottom: 25px;
 
@@ -1575,73 +1593,7 @@ body.is-preload #footer {
 	width: 100%;
 	height: auto;
 	border-radius: 5px;
-}
-
-.funboxbase {
-	width: 100%;
-	height: auto;
-	margin-top: 30px;
-	margin-bottom: 30px;
-
-	/*border: 1px solid #2fff14;
-	border-radius: 6px;
-	box-shadow: 0 0 10px 5px rgba(47, 255, 20, 0.3);*/
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.funbox {
-	color: #fff;
-	font-size: 1.5em;
-	font-weight: 100;
-}
-
-.funbox span {
-	position: relative;
-	color: rgba(255, 255, 255, 0.1);
-	animation: displayText 9s infinite;
-	animation-delay: calc(-3s * var(--i));
-}
-
-@keyframes displayText {
-	0% {
-		display: inline-block;
-	}
-
-	33.33%,
-	100% {
-		display: none;
-	}
-}
-
-.funbox span::before {
-	content: attr(data-text);
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	color: #2fff14;
-	overflow: hidden;
-	border-right: 4px solid #2fff14;
-	filter: drop-shadow(0 0 5px #2fff14) drop-shadow(0 0 25px #2fff14);
-	animation: animate 3s linear infinite;
-}
-
-@keyframes animate {
-
-	0%,
-	10%,
-	100% {
-		width: 0;
-	}
-
-	70%,
-	90% {
-		width: 100%;
-	}
-}
+}*/
 
 .site-title {
 	font-weight: bold;
