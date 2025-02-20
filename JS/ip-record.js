@@ -13,14 +13,18 @@ function getBrowserAndOSInfo() {
         else if (userAgent.indexOf("Windows NT 6.0") !== -1) os += " Vista";
         else if (userAgent.indexOf("Windows NT 5.1") !== -1) os += " XP";
         else if (userAgent.indexOf("Windows NT 5.0") !== -1) os += " 2000";
-    } else if (userAgent.indexOf("Mac") !== -1) {
-        os = "Mac";
-    } else if (userAgent.indexOf("Linux") !== -1) {
-        os = "Linux";
     } else if (userAgent.indexOf("Android") !== -1) {
         os = "Android";
+        const versionMatch = userAgent.match(/Android\s([0-9\.]+)/);
+        if (versionMatch) {
+            os += " " + versionMatch[1];
+        }
+    } else if (userAgent.indexOf("Mac") !== -1) {
+        os = "Mac";
     } else if (userAgent.indexOf("iOS") !== -1) {
         os = "IOS";
+    } else if (userAgent.indexOf("Linux") !== -1) {
+        os = "Linux";
     }
 
     let browser = "未知浏览器";
