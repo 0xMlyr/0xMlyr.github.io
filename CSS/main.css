@@ -451,6 +451,12 @@ hr {
 	position: relative;
 }
 
+.fa {
+    display: inline-block; /* 确保图标占据 inline-block 空间 */
+    vertical-align: middle; /* 垂直对齐方式 */
+    margin-right: 5px; /* 图标与文本之间的间距 */
+}
+
 /* Image */
 
 .image {
@@ -712,12 +718,6 @@ ul.actions.fit.stacked {
 }
 
 /* Icons */
-.fa {
-    display: inline-block; /* 确保图标占据 inline-block 空间 */
-    vertical-align: middle; /* 垂直对齐方式 */
-    margin-right: 5px; /* 图标与文本之间的间距 */
-}
-
 
 ul.icons {
 	cursor: default;
