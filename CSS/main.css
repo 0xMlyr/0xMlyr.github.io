@@ -448,7 +448,7 @@ hr {
 	font-size: 16px;
     display: inline-block; /* 确保图标占据 inline-block 空间 */
     vertical-align: middle; /* 垂直对齐方式 */
-    margin-right: 5px; /* 图标与文本之间的间距 */
+    margin-right: 3px; /* 图标与文本之间的间距 */
 }
 
 /* Image */
