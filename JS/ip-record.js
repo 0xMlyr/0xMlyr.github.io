@@ -128,37 +128,3 @@ updateTime();
 
 // 每秒更新一次时间
 setInterval(updateTime, 1000);
-
-function checkWebsiteSpeed() {
-    const targetUrl = 'www.mlyr.top';
-    const apiUrl = `https://api.suyanw.cn/api/cs.php?url=${targetUrl}`;
-
-    fetch(apiUrl)
-      .then(response => response.text())
-      .then(data => {
-        // 使用正则表达式提取 最快，最慢，平均值
-        const fastestMatch = data.match(/最快：([\d.]+)\/ms/);
-        const slowestMatch = data.match(/最慢：([\d.]+)\/ms/);
-        const averageMatch = data.match(/平均：([\d.]+)\/ms/);
-
-        if (fastestMatch && slowestMatch && averageMatch) {
-          const fastest = fastestMatch[1];
-          const slowest = slowestMatch[1];
-          const average = averageMatch[1];
-
-          // 将结果显示在HTML元素中
-          const netSpeedSpan = document.getElementById('netSpeed');
-          netSpeedSpan.textContent = `Max_${fastest} Min_${slowest} Avg_${average}`;
-        } else {
-          console.error('未能解析 API 响应数据。');
-          document.getElementById('netSpeed').textContent = '连接速度检测失败。';
-        }
-      })
-      .catch(error => {
-        console.error('连接速度检测出错：', error);
-        document.getElementById('netSpeed').textContent = '连接速度检测出错。';
-      });
-  }
-
-  // 页面加载完成后立即执行检测
-  window.onload = checkWebsiteSpeed;

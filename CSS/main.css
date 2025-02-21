@@ -1,4 +1,4 @@
-@import url("./all.min.css");
+@import url("https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css");
 
 html {
 	/*filter: grayscale(100%);*/
@@ -444,39 +444,11 @@ hr {
 
 /* Icon */
 
-.icon {
+[class^="fa"] {
+	font-size: 16px;
 	text-decoration: none;
 	border-bottom: none;
 	position: relative;
-}
-
-.icon:before {
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	display: inline-block;
-	font-style: normal;
-	font-variant: normal;
-	text-rendering: auto;
-	line-height: 1;
-	text-transform: none !important;
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 400;
-}
-
-.icon>.label {
-	display: none;
-}
-
-.icon:before {
-	line-height: inherit;
-}
-
-.icon.solid:before {
-	font-weight: 900;
-}
-
-.icon.brands:before {
-	font-family: 'Font Awesome 6 Brands';
 }
 
 /* Image */
@@ -1401,21 +1373,22 @@ body.is-preload #header .content .inner {
 
 }
 
-.nextinfo{
+.nextinfo {
 	margin-bottom: 0;
 }
+
 @media screen and (max-width: 736px) {
-	.nextinfo{
+	.nextinfo {
 		margin-bottom: 10px;
 	}
 }
 
 /* IP info */
-.infoContainer{
+.infoContainer {
 	margin: 0;
 }
 
-.infoContainer p{
+.infoContainer p {
 	margin: 0;
 }
 
@@ -1618,7 +1591,7 @@ body.is-preload #footer {
 	opacity: 0.75;
 }
 
-.quote p{
+.quote p {
 	margin-bottom: 0rem;
 }
 
