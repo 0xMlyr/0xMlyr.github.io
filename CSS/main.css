@@ -814,6 +814,11 @@ table.alt tfoot {
 	border-top: 0;
 }
 
+/* Font */
+.STYLE1 {
+	color: aqua;
+}
+
 /* BG */
 
 #bg {
@@ -1381,6 +1386,14 @@ body.is-preload #header .content .inner {
 	.nextinfo {
 		margin-bottom: 10px;
 	}
+}
+
+.project_box {
+    width: 100%;
+    height: 85px;
+    margin-bottom: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
 }
 
 /* IP info */
