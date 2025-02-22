@@ -104,13 +104,12 @@
 							// Activate article.
 								$article.addClass('active');
 
-							// Unlock.
-								locked = false;
-
 							// Unmark as switching.
-								setTimeout(function() {
-									$body.removeClass('is-switching');
-								}, (initial ? 1000 : 0));
+							setTimeout(function() {
+								// Unlock.
+								locked = false;
+								$body.removeClass('is-switching');
+							}, (initial ? 1000 : 0));
 
 							return;
 

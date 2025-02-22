@@ -20,11 +20,11 @@ function getBrowserAndOSInfo() {
             os += " " + versionMatch[1];
         }
     } else if (userAgent.indexOf("iPhone") !== -1) {
-        os = "iPhone";
+        os = "iPhone iOS";
     } else if (userAgent.indexOf("Mac") !== -1) {
         os = "Mac";
     } else if (userAgent.indexOf("iOS") !== -1) {
-        os = "IOS";
+        os = "iOS";
     } else if (userAgent.indexOf("Linux") !== -1) {
         os = "Linux";
     }
