@@ -174,7 +174,7 @@
                     <p>本域名(mlyr.top)仅对港澳台地区开放，<br>中国大陆用户谢绝访问。<br></p>
 
                 </div>
-                <script>
+                <script defer>
                     window.addEventListener('DOMContentLoaded', function () {
                         var detailsOpen = document.getElementById('detailsopen');
                         detailsOpen.classList.remove('open');
@@ -255,7 +255,7 @@
             <div id="quote-container" class="quote">
             </div>
 
-            <script>
+            <script defer>
                 function getQuote() {
                     const apiUrl = 'https://api.suyanw.cn/api/gushi.php?type=json';
                     /*const apiUrl = 'https://api.suyanw.cn/api/yiyan.php?type=js';*/
@@ -298,11 +298,11 @@
     <script src="./JS/breakpoints.min.js"></script>
     <script src="./JS/util.js"></script>
     <script src="./JS/main.js"></script>
-    <script src="./JS/cplayer.js"></script>
-    <script src="./JS/ip-record.js"></script>
+    <script src="./JS/cplayer.js" defer></script>
+    <script src="./JS/ip-record.js" defer></script>
 
     <!--Music-->
-    <script>
+    <script defer>
         let player = new cplayer({
             element: document.getElementById('app'),
             zoomOutKana: true,
