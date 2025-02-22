@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="./IMG/home.png">
     <meta name="keywords" content="MLYR,慕灵一儒">
     <link rel="stylesheet" href="./CSS/main.css">
-    <link rel="stylesheet" href="./CSS/load.css"><!--加载动画-->
 
     <noscript>
         <link rel="stylesheet" href="./CSS/noscript.css">
@@ -83,6 +82,8 @@
 
                 <div class="site-title">MLYR's WebSite</div>
                 <div class="site-sub-title">不忘初心 • 一生浪漫</div>
+
+                <link rel="stylesheet" href="./CSS/load.css"><!--加载动画-->
 
                 <div class="eyebox">
                     <div class="eyes"></div>
@@ -298,11 +299,11 @@
     <script src="./JS/breakpoints.min.js"></script>
     <script src="./JS/util.js"></script>
     <script src="./JS/main.js"></script>
-    <script src="./JS/cplayer.js" defer></script>
-    <script src="./JS/ip-record.js" defer></script>
+    <script src="./JS/cplayer.js"></script>
+    <script src="./JS/ip-record.js" async></script>
 
     <!--Music-->
-    <script defer>
+    <script>
         let player = new cplayer({
             element: document.getElementById('app'),
             zoomOutKana: true,
