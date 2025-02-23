@@ -885,8 +885,8 @@ table.alt tfoot {
 		-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 		-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 		transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-		background-image: url("https://api.suyanw.cn/api/comic2");
-		/*background-image: url("https://tvax2.sinaimg.cn/mw2048/008uAIdSgy1h9dvyxe5vej31y72q8npg.jpg");*/
+		/*background-image: url("https://api.suyanw.cn/api/comic2");*/
+		background-image: url("./bg/err_ph.webp");
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -1617,5 +1617,21 @@ body.is-preload #footer {
 @media (min-width: 481px) {
 	.quote {
 		margin-bottom: 0;
+	}
+}
+
+.SleepImg{
+	margin-right: 10px;
+}
+
+@media (max-width: 480px) {
+	.SleepImg {
+		height: 45px;
+	}
+}
+
+@media (min-width: 481px) {
+	.SleepImg {
+		height: 50px;
 	}
 }
