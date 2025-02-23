@@ -6,7 +6,8 @@
     <title>慕灵一儒の主页</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="shortcut icon" href="./IMG/home.png">
+    <link rel="shortcut icon" href="./IMG/tag.svg">
+
     <meta name="keywords" content="MLYR,慕灵一儒">
     <link rel="stylesheet" href="./CSS/main.css">
 
@@ -23,6 +24,15 @@
             border-bottom: none;
         }
     </style>
+
+    <script>
+        let currentTitleIndex = 0;
+        const titles = ["等你好久啦~", "慕灵一儒の主页"];
+        setInterval(() => {
+            currentTitleIndex = 1 - currentTitleIndex;
+            document.title = titles[currentTitleIndex];
+        }, 1500);
+    </script>
 
 </head>
 
@@ -45,7 +55,7 @@
             </div>
 
             <nav>
-              <ul>
+                <ul>
                     <li><a href="#intro"><i class="fa fa-bookmark-o"></i>介绍</a></li>
                     <li><a href="#work"><i class="fa fa-rocket"></i>服务</a></li>
                     <li><a href="#about"><i class="fa fa-puzzle-piece"></i>关于</a></li>
@@ -61,7 +71,7 @@
             </div>
 
             <nav>
-              <ul>
+                <ul>
                     <li><a href="#error"><i class="fa fa-home"></i>次元导航</a></li>
                     <li><a href="#error"><i class="fa fa-magic"></i>慕灵者说</a></li>
                     <li><a href="#error"><i class="fa fa-hdd-o"></i>七号仓库</a></li>
@@ -84,7 +94,8 @@
                 <div class="site-sub-title">不忘初心 • 一生浪漫</div>
 
                 <span class="image main">
-                    <img src="./IMG/headbg.webp" loading="lazy">
+                    <img src="./IMG/headbg.webp"
+                        loading="lazy">
                 </span>
 
                 <div align="right" class="nextinfo">
@@ -95,14 +106,46 @@
             <!-- Work -->
             <article id="work">
                 <h2 class="major">Service</h2>
-                <p>这是我的一些网站，附上一些说明：<br>
-                    次元导航：#<br>
-                    慕灵者说：#<br>
-                    七号仓库：#<br>
-                    在线项目：#<br>
-                    DEBUG：@root<br>
-                </p>
+                <p style="margin-bottom: 0;">这是我的门户网站，</p>
+                <div id="details" onclick="toggleDetails()">
+                    <p><a style="color: rgb(154, 156, 190);">点击</a>查看所有服务项。</p>
+                </div>
+                <div id="detailsopen">
+                    <p>
+                        次元导航：#<br>
+                        慕灵者说：#<br>
+                        七号仓库：#<br>
+                        在线项目：#<br>
+                        DEBUG：@root<br>
+                    </p>
+                </div>
+                <script defer>
+                    window.addEventListener('DOMContentLoaded', function () {
+                        var detailsOpen = document.getElementById('detailsopen');
+                        detailsOpen.classList.remove('open');
+                    });
+
+                    function toggleDetails() {
+                        var detailsOpen = document.getElementById('detailsopen');
+
+                        if (detailsOpen.classList.contains('open')) {
+                            detailsOpen.style.height = '0';
+                            detailsOpen.style.opacity = 0;
+                            setTimeout(function () {
+                                detailsOpen.classList.remove('open');
+                            }, 2000);
+                        } else {
+                            detailsOpen.classList.add('open');
+                            detailsOpen.style.height = detailsOpen.scrollHeight + 'px';
+                            setTimeout(function () {
+                                detailsOpen.style.opacity = 1;
+                            }, 0);
+                        }
+                    }
+                </script>
+
                 <p><strong>希望对你有所帮助</strong></p>
+
                 <div align="right" class="nextinfo">
                     <a href="#about">不懂问我？</a>
                 </div>
@@ -144,52 +187,10 @@
 
                 <img src="./IMG/gpt-4-motif.svg">
                 <p style="margin-top: 20px; margin-bottom: 1rem"><strong>E-mail:</strong> mlyr.255.1024@gmail.com<br>
-                    <strong>X(<i class="fa fa-twitter"
-                            style="margin-right: 3px; margin-left: 2px; color: rgb(23, 162, 241);"></i>Twitter):</strong>
+                    <strong>X(Twitter):</strong>
                     @MLYR1024
                 </p>
                 <p>希望我们不会为自己的过去后悔......</p>
-            </article>
-
-            <!--Warn-->
-            <article id="warn">
-                <h2 class="major">友情的警告⚠️</h2>
-
-                <p>
-                    请确保您自认为自己可以访问，<br>并具备自主决策的能力。<br>
-                </p>
-                <div id="details" onclick="toggleDetails()">
-                    <p>点击查看明细</p>
-                </div>
-                <div id="detailsopen">
-                    <p>本域名(mlyr.top)仅对港澳台地区开放，<br>中国大陆用户谢绝访问。<br></p>
-
-                </div>
-                <script defer>
-                    window.addEventListener('DOMContentLoaded', function () {
-                        var detailsOpen = document.getElementById('detailsopen');
-                        detailsOpen.classList.remove('open');
-                    });
-
-                    function toggleDetails() {
-                        var detailsOpen = document.getElementById('detailsopen');
-
-                        if (detailsOpen.classList.contains('open')) {
-                            detailsOpen.style.height = '0';
-                            detailsOpen.style.opacity = 0;
-                            setTimeout(function () {
-                                detailsOpen.classList.remove('open');
-                            }, 2000);
-                        } else {
-                            detailsOpen.classList.add('open');
-                            detailsOpen.style.height = detailsOpen.scrollHeight + 'px';
-                            setTimeout(function () {
-                                detailsOpen.style.opacity = 1;
-                            }, 0);
-                        }
-                    }
-                </script>
-
             </article>
 
             <!-- ERROR 502 -->
@@ -205,8 +206,7 @@
         <footer id="footer">
 
             <div class="content">
-                <div class="inner">
-                </div>
+                <div class="inner"></div>
             </div>
 
             <!--Bottom copyright information-->
@@ -226,9 +226,9 @@
                         Github Page
                     </p>
                 </div>
+
                 <div class="copyname">
-                    <a href="#warn">
-                        <img src="./IMG/writer_low.webp" class="seal" loading="lazy"></a>
+                    <img src="./IMG/writer_low.webp" class="seal" loading="lazy">
                 </div>
 
                 <p>© Copyright by <strong><a href="http://www.mlyr.top" style="text-decoration:none;">MLYR</a></strong>
@@ -248,7 +248,6 @@
             <script defer>
                 function getQuote() {
                     const apiUrl = 'https://api.suyanw.cn/api/gushi.php?type=json';
-                    /*const apiUrl = 'https://api.suyanw.cn/api/yiyan.php?type=js';*/
 
                     fetch(apiUrl)
                         .then(response => response.json())
@@ -302,24 +301,24 @@
             playlist: [
                 {
                     src: 'https://music.163.com/song/media/outer/url?id=1886076245.mp3',
-                    poster: 'https://p4.music.126.net/tdBhA4_YvSfaJBfBUtJAFQ==/109951167870491074.jpg?param=300y300',
-                    name: 'rabbit',
+                    poster: 'https://p1.music.126.net/eKbzV5tkCr2BJL8hcEEo0Q==/109951166509864911.jpg?param=300y300',
+                    name: 'Rabbit',
                     artist: 'lo-fi ver.',
-                    lyric: '纯音乐，请欣赏'
+                    lyric: ''
                 },
                 {
                     src: 'https://music.163.com/song/media/outer/url?id=1886075183.mp3',
-                    poster: 'https://p3.music.126.net/W35p4QxHFsDoQJSH45Lrjg==/109951168153944857.jpg?param=300y300',
-                    name: 'vi jin',
+                    poster: 'https://p1.music.126.net/eKbzV5tkCr2BJL8hcEEo0Q==/109951166509864911.jpg?param=300y300',
+                    name: 'Vi jin',
                     artist: 'lo-fi ver.',
-                    lyric: '纯音乐，请欣赏'
+                    lyric: ''
                 },
                 {
                     src: 'https://music.163.com/song/media/outer/url?id=1886075184.mp3',
-                    poster: 'https://p4.music.126.net/JaE9FykaLU8dRSbNlucbZg==/109951163538935511.jpg?param=300y300',
+                    poster: 'https://p1.music.126.net/eKbzV5tkCr2BJL8hcEEo0Q==/109951166509864911.jpg?param=300y300',
                     name: 'Salava',
                     artist: 'lo-fi ver.',
-                    lyric: '纯音乐，请欣赏'
+                    lyric: ''
                 },
             ]
         })
