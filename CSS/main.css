@@ -886,7 +886,7 @@ table.alt tfoot {
 		-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 		transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
 		/*background-image: url("https://api.suyanw.cn/api/comic2");*/
-		background-image: url("./bg/err_ph.webp");
+		background-image: url("./bg/ph2.webp");
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -1421,7 +1421,7 @@ body.is-preload #header .content .inner {
 #footer .copyright {
 	letter-spacing: 0.2rem;
 	font-size: 0.6rem;
-	opacity: 0.75;
+	opacity: 0.8;
 }
 
 body.is-article-visible #footer {
@@ -1632,6 +1632,6 @@ body.is-preload #footer {
 
 @media (min-width: 481px) {
 	.SleepImg {
-		height: 50px;
+		height: 52px;
 	}
 }

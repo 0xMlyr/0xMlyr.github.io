@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>MLYR's WebSite</title>
+    <title>加载中...</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="./IMG/tag.svg">
@@ -25,12 +25,13 @@
     </style>
 
     <script defer>
-        let currentTitleIndex = 0;
-        const titles = [" (＾▽＾) ", "MLYR's WebSite"];
-        setInterval(() => {
-            currentTitleIndex = 1 - currentTitleIndex;
-            document.title = titles[currentTitleIndex];
-        }, 1500);
+        let titleTexts = [">_", ">_ 慕", ">_ 慕灵", ">_ 慕灵一", ">_ 慕灵一儒", ">_ 慕灵一儒の", ">_ 慕灵一儒の主", ">_ 慕灵一儒の主页", ">_ 慕灵一儒の主页", ">_ 慕灵一儒の主", ">_ 慕灵一儒の", ">_ 慕灵一儒", ">_ 慕灵一", ">_ 慕灵", ">_ 慕",];
+        let titleIndex = 0;
+        function updateTitle() {
+            document.title = titleTexts[titleIndex];
+            titleIndex = (titleIndex + 1) % titleTexts.length; // 循环索引
+        }
+        setInterval(updateTitle, 300); // 每 0.5 秒更新一次
     </script>
 
 </head>
@@ -106,8 +107,8 @@
                 <h2 class="major">Service</h2>
 
                 <div style="display: flex; height: auto;">
-                    <img src="https://www.emojiall.com/images/240/microsoft-teams/1f634.png" class="SleepImg">
-                    
+                    <img src="https://www.emojiall.com/images/240/microsoft-teams/1f928.png" class="SleepImg">
+
                     <div id="details" onclick="toggleDetails()">
                         <p style="margin-bottom: 0;">这是我的门户网站，</p>
                         <p>点击 查看所有服务项。</p>
@@ -121,7 +122,7 @@
                         慕灵者说：#<br>
                         七号仓库：#<br>
                         在线项目：#<br>
-                        DEBUG：@root<br>
+                        DEBUG：你想干什么？<br>
                     </p>
                 </div>
                 <script defer>
