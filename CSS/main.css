@@ -1398,7 +1398,7 @@ body.is-preload #header .content .inner {
 
 /* IP info */
 .infoContainer {
-	margin: 0;
+	margin-bottom: 1.5rem;
 }
 
 .infoContainer p {
