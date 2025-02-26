@@ -109,7 +109,8 @@
                     <img src="https://www.emojiall.com/images/240/microsoft-teams/1f928.png" class="SleepImg default"
                         loading="lazy" style="transition: opacity 1s ease-in-out;" alt="N/A">
                     <img src="https://www.emojiall.com/images/240/microsoft-teams/1f60e.png" class="SleepImg alternate"
-                        loading="lazy" style="position: absolute; opacity: 0; transition: opacity 1s ease-in-out;" alt="N/A">
+                        loading="lazy" style="position: absolute; opacity: 0; transition: opacity 1s ease-in-out;"
+                        alt="N/A">
 
                     <div id="details" onclick="toggleDetails()">
                         <p style="margin-bottom: 0;">这是我的门户网站，</p>
@@ -195,7 +196,6 @@
                     <p>_ 浏览器：<span id="browserInfo"></span></p>
                     <p>_ 访客IP：<span id="ipAddress"></span></p>
                     <p>_ IP归属地：<span id="ipLocation"></span></p>
-                    <p>_ 推荐使用Chrome或Safari访问</p>
                 </div>
 
                 <p style="font-size: 0.6rem; opacity: 0.3; margin-bottom: 2rem;"><span id="userAgentInfo"></span></p>
@@ -207,6 +207,17 @@
 
                 <p>暂未开放 随缘更新！</p>
             </article>
+
+            <!-- DEBUG -->
+            <article id="debug">
+                <h2 class="major">DEBUG</h2>
+                <div class="debug">
+                    <input type="text" id="debug-input" placeholder="你想干啥？">
+                    <button id="debug-submit">进入</button>
+                    <p>>_ debug.mlyr.top</p>
+                </div>
+            </article>
+
 
         </div>
 
@@ -241,9 +252,9 @@
 
                 <p>© Copyright by <strong><a href="http://www.mlyr.top" style="text-decoration:none;">MLYR</a></strong>
                     2020-2025<br>
-                    <a href="https://cloudflare.com" target="_blank" style="text-decoration:none;">Network serviced by
-                        <strong>Cloudflare</strong></a> <br><a href="http://debug.mlyr.top:1017" target="_blank"
-                        style="text-decoration:none;">Log in as Admine to Debug</a>
+                    Network serviced by <a href="https://cloudflare.com" target="_blank" style="text-decoration:none;">
+                        <strong>Cloudflare</strong></a> <br>Log in as Admine to <a href="#debug"
+                        style="text-decoration:none;">Debug</a>
                     <br>
                     <a style="text-decoration:none;">最后更新于: 2025.02.26.21.47.32</a>
                 </p>
@@ -297,6 +308,7 @@
     <script src="./JS/main.js"></script>
     <script src="./JS/cplayer.js"></script>
     <script src="./JS/ip-record.js" async></script>
+    <script src="./JS/debug.js" async></script>
 
     <!--Music-->
     <script>

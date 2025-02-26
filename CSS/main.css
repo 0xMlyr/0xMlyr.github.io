@@ -446,9 +446,12 @@ hr {
 
 [class^="fa"] {
 	font-size: 16px;
-    display: inline-block; /* 确保图标占据 inline-block 空间 */
-    vertical-align: middle; /* 垂直对齐方式 */
-    margin-right: 3px; /* 图标与文本之间的间距 */
+	display: inline-block;
+	/* 确保图标占据 inline-block 空间 */
+	vertical-align: middle;
+	/* 垂直对齐方式 */
+	margin-right: 3px;
+	/* 图标与文本之间的间距 */
 }
 
 /* Image */
@@ -1389,11 +1392,11 @@ body.is-preload #header .content .inner {
 }
 
 .project_box {
-    width: 100%;
-    height: 85px;
-    margin-bottom: 20px;
-    border: 1px solid white;
-    border-radius: 5px;
+	width: 100%;
+	height: 85px;
+	margin-bottom: 20px;
+	border: 1px solid white;
+	border-radius: 5px;
 }
 
 /* IP info */
@@ -1564,22 +1567,6 @@ body.is-preload #footer {
 	}
 }
 
-/*.conbox {
-	height: auto;
-	margin-bottom: 25px;
-
-	border: 1px solid #ff1493;
-	filter: drop-shadow(0 0 6px #ff1493);
-	border-radius: 5px;
-	background-color: transparent;
-}
-
-.conbox img {
-	display: block;
-	width: 100%;
-	height: auto;
-	border-radius: 5px;
-}*/
 
 .site-title {
 	font-weight: bold;
@@ -1620,7 +1607,7 @@ body.is-preload #footer {
 	}
 }
 
-.SleepImg{
+.SleepImg {
 	margin-right: 10px;
 }
 
@@ -1635,3 +1622,19 @@ body.is-preload #footer {
 		height: 52px;
 	}
 }
+
+/* debug */
+
+.debug {
+	text-align: left;
+	margin-bottom: 1rem;
+}
+
+.debug p{
+	margin: 0;
+	color: #ffffff;
+}
+
+#debug-input {
+	color: rgb(0, 0, 0);
+  }
