@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const input = document.getElementById('debug-input');
+    const submitButton = document.getElementById('debug-submit');
+
+    // 提交按钮点击事件
+    submitButton.addEventListener('click', function () {
+        submitInput();
+    });
 
     // 回车键事件
     input.addEventListener('keydown', function (event) {
