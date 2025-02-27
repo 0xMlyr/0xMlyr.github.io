@@ -47,7 +47,7 @@ function getBrowserAndOSInfo() {
 function updateScreenSize() {
     const screenWidth = window.screen.width;
     const screenHeight = window.screen.height;
-    const screenSize = `${screenWidth} x ${screenHeight}`;
+    const screenSize = `${screenWidth} x ${screenHeight} px`;
     document.getElementById("screenSize").textContent = screenSize;
 }
 
@@ -80,7 +80,7 @@ async function getIPLocation(ip) {
 function updateTime() {
     const now = new Date();
     const timeString = now.toISOString().replace("T", " ").substring(0, 19);
-    document.getElementById('time').textContent = timeString;
+    document.getElementById('sysTime').textContent = timeString;
 }
 
 // 页面加载时立即更新

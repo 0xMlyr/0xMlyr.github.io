@@ -1626,15 +1626,48 @@ body.is-preload #footer {
 /* debug */
 
 .debug {
+	display: flex;
+  align-items: flex-start;
 	text-align: left;
 	margin-bottom: 1rem;
 }
 
-.debug p{
+.debug p {
 	margin: 0;
 	color: #ffffff;
 }
 
 #debug-input {
-	color: rgb(0, 0, 0);
-  }
+	color: rgb(255, 255, 255);
+}
+
+.debugInputBox {
+	width: 105px;
+	height: 35px;
+	background-color: #383b3d;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 5px solid rgb(105, 54, 57);
+	padding: 0 0 0 10px;
+	border-radius: 0;
+	margin: 0 10px 0 0;
+	vertical-align: top;
+	font-size: 15px;
+	letter-spacing: 10px;
+}
+
+.debugInputButton{
+	width: auto;
+	height: 35px;
+	background-color: #383b3d;
+	color: rgba(255, 255, 255, 0.6);
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 5px solid rgb(43, 92, 52);
+	border-radius: 0;
+	margin: 0;
+	vertical-align: top;
+	font-size: 15px;
+}
