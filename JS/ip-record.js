@@ -3,69 +3,41 @@ function getBrowserAndOSInfo() {
     const userAgent = navigator.userAgent;
     document.getElementById("userAgentInfo").textContent = userAgent;
 
-    let os = "未知操作系统";
-    if (userAgent.indexOf("Windows") !== -1) {
-        os = "Windows";
-        if (userAgent.indexOf("Windows NT 10.0") !== -1) os += " 10";
-        else if (userAgent.indexOf("Windows NT 6.3") !== -1) os += " 8.1";
-        else if (userAgent.indexOf("Windows NT 6.2") !== -1) os += " 8";
-        else if (userAgent.indexOf("Windows NT 6.1") !== -1) os += " 7";
-        else if (userAgent.indexOf("Windows NT 6.0") !== -1) os += " Vista";
-        else if (userAgent.indexOf("Windows NT 5.1") !== -1) os += " XP";
-        else if (userAgent.indexOf("Windows NT 5.0") !== -1) os += " 2000";
-    } else if (userAgent.indexOf("Android") !== -1) {
-        os = "Android";
-        const versionMatch = userAgent.match(/Android\s([0-9\.]+)/);
-        if (versionMatch) {
-            os += " " + versionMatch[1];
+    const osPatterns = [
+        { pattern: /Windows NT 10.0/, name: "Windows 10" },
+        { pattern: /Windows NT 6.3/, name: "Windows 8.1" },
+        { pattern: /Windows NT 6.2/, name: "Windows 8" },
+        { pattern: /Windows NT 6.1/, name: "Windows 7" },
+        { pattern: /Windows NT 6.0/, name: "Windows Vista" },
+        { pattern: /Windows NT 5.1/, name: "Windows XP" },
+        { pattern: /Windows NT 5.0/, name: "Windows 2000" },
+        { pattern: /Android ([0-9\.]+)/, name: "Android" },
+        { pattern: /iPhone/, name: "iPhone iOS" },
+        { pattern: /Mac/, name: "Mac" },
+        { pattern: /iOS/, name: "iOS" },
+        { pattern: /Linux/, name: "Linux" }
+    ];
+
+    const browserPatterns = [
+        { pattern: /Chrome\/([0-9\.]+)/, name: "Chrome" },
+        { pattern: /Firefox\/([0-9\.]+)/, name: "Firefox" },
+        { pattern: /Safari\/([0-9\.]+)/, name: "Safari" },
+        { pattern: /Edge\/([0-9\.]+)/, name: "Edge" },
+        { pattern: /Opera\/([0-9\.]+)|OPR\/([0-9\.]+)/, name: "Opera" }
+    ];
+
+    function matchPattern(patterns, userAgent) {
+        for (const { pattern, name } of patterns) {
+            const match = userAgent.match(pattern);
+            if (match) {
+                return name + (match[1] ? ` ${match[1]}` : "");
+            }
         }
-    } else if (userAgent.indexOf("iPhone") !== -1) {
-        os = "iPhone iOS";
-    } else if (userAgent.indexOf("Mac") !== -1) {
-        os = "Mac";
-    } else if (userAgent.indexOf("iOS") !== -1) {
-        os = "iOS";
-    } else if (userAgent.indexOf("Linux") !== -1) {
-        os = "Linux";
+        return "未知";
     }
 
-    let browser = "未知浏览器";
-    if (userAgent.indexOf("Chrome") !== -1) {
-        browser = "Chrome";
-        let version = userAgent.substring(userAgent.indexOf("Chrome/") + 7);
-        if (version.indexOf(" ") !== -1) {
-            version = version.substring(0, version.indexOf(" "));
-        }
-        browser += " " + version;
-    } else if (userAgent.indexOf("Firefox") !== -1) {
-        browser = "Firefox";
-        let version = userAgent.substring(userAgent.indexOf("Firefox/") + 8);
-        if (version.indexOf(" ") !== -1) {
-            version = version.substring(0, version.indexOf(" "));
-        }
-        browser += " " + version;
-    } else if (userAgent.indexOf("Safari") !== -1) {
-        browser = "Safari";
-        let version = userAgent.substring(userAgent.indexOf("Version/") + 8);
-        if (version.indexOf(" ") !== -1) {
-            version = version.substring(0, version.indexOf(" "));
-        }
-        browser += " " + version;
-    } else if (userAgent.indexOf("Edge") !== -1) {
-        browser = "Edge";
-        let version = userAgent.substring(userAgent.indexOf("Edge/") + 5);
-        if (version.indexOf(" ") !== -1) {
-            version = version.substring(0, version.indexOf(" "));
-        }
-        browser += " " + version;
-    } else if (userAgent.indexOf("Opera") !== -1 || userAgent.indexOf("OPR") !== -1) {
-        browser = "Opera";
-        let version = userAgent.substring(userAgent.indexOf("Version/") + 8);
-        if (version.indexOf(" ") !== -1) {
-            version = version.substring(0, version.indexOf(" "));
-        }
-        browser += " " + version;
-    }
+    const os = matchPattern(osPatterns, userAgent);
+    const browser = matchPattern(browserPatterns, userAgent);
 
     document.getElementById("osInfo").textContent = os;
     document.getElementById("browserInfo").textContent = browser;
@@ -79,66 +51,43 @@ function updateScreenSize() {
     document.getElementById("screenSize").textContent = screenSize;
 }
 
-// 页面加载时立即更新屏幕尺寸
-updateScreenSize();
-
-
 // 获取IP地址
-function getIPAddress() {
-    fetch("https://api.suyanw.cn/api/ip.php")
-        .then(response => response.text())
-        .then(ip => {
-            document.getElementById("ipAddress").textContent = ip;
-            getIPLocation(ip);
-        })
-        .catch(error => {
-            console.error("获取IP地址失败:", error);
-            document.getElementById("ipAddress").textContent = "获取IP地址失败";
-        });
+async function getIPAddress() {
+    try {
+        const response = await fetch("https://api.suyanw.cn/api/ip.php");
+        const ip = await response.text();
+        document.getElementById("ipAddress").textContent = ip;
+        getIPLocation(ip);
+    } catch (error) {
+        console.error("获取IP地址失败:", error);
+        document.getElementById("ipAddress").textContent = "获取IP地址失败";
+    }
 }
 
 // 获取IP地址信息
-function getIPLocation(ip) {
-    fetch(`https://api.suyanw.cn/api/ipcha.php?ip=${ip}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data && data.code === 1 && data.text) {
-                document.getElementById("ipLocation").textContent = data.text;
-            } else {
-                document.getElementById("ipLocation").textContent = "IP地址信息获取失败";
-            }
-        })
-        .catch(error => {
-            console.error("获取IP地址信息失败:", error);
-            document.getElementById("ipLocation").textContent = "IP地址信息获取失败";
-        });
+async function getIPLocation(ip) {
+    try {
+        const response = await fetch(`https://api.suyanw.cn/api/ipcha.php?ip=${ip}`);
+        const data = await response.json();
+        document.getElementById("ipLocation").textContent = data && data.code === 1 && data.text ? data.text : "IP地址信息获取失败";
+    } catch (error) {
+        console.error("获取IP地址信息失败:", error);
+        document.getElementById("ipLocation").textContent = "IP地址信息获取失败";
+    }
 }
 
-getBrowserAndOSInfo();
-getIPAddress();
-
+// 更新当前时间
 function updateTime() {
     const now = new Date();
-
-    // 获取年月日
-    const year = now.getFullYear();
-    const month = (now.getMonth() + 1).toString().padStart(2, '0'); // 月份从 0 开始，需要加 1
-    const day = now.getDate().toString().padStart(2, '0');
-
-    // 获取时分秒
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
-
-    // 拼接时间字符串
-    const timeString = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-
-    // 更新 HTML
+    const timeString = now.toISOString().replace("T", " ").substring(0, 19);
     document.getElementById('time').textContent = timeString;
 }
 
-// 页面加载时立即更新一次时间
-updateTime();
-
-// 每秒更新一次时间
-setInterval(updateTime, 1000);
+// 页面加载时立即更新
+document.addEventListener('DOMContentLoaded', () => {
+    getBrowserAndOSInfo();
+    updateScreenSize();
+    getIPAddress();
+    updateTime();
+    setInterval(updateTime, 1000); // 每秒更新一次时间
+});
