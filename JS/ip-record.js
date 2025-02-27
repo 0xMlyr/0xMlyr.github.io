@@ -71,6 +71,18 @@ function getBrowserAndOSInfo() {
     document.getElementById("browserInfo").textContent = browser;
 }
 
+// 获取屏幕尺寸
+function updateScreenSize() {
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+    const screenSize = `${screenWidth} x ${screenHeight}`;
+    document.getElementById("screenSize").textContent = screenSize;
+}
+
+// 页面加载时立即更新屏幕尺寸
+updateScreenSize();
+
+
 // 获取IP地址
 function getIPAddress() {
     fetch("https://api.suyanw.cn/api/ip.php")
