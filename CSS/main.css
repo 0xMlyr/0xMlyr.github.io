@@ -1654,6 +1654,7 @@ body.is-preload #footer {
 	margin: 0 10px 0 0;
 	vertical-align: top;
 	font-size: 15px;
+font: inherit;
 	letter-spacing: 10px;
 }
 
@@ -1670,4 +1671,5 @@ body.is-preload #footer {
 	margin: 0;
 	vertical-align: top;
 	font-size: 15px;
+font: inherit;
 }
