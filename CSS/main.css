@@ -1627,7 +1627,7 @@ body.is-preload #footer {
 
 .debug {
 	display: flex;
-  align-items: flex-start;
+	align-items: flex-start;
 	text-align: left;
 	margin-bottom: 1rem;
 }
@@ -1654,11 +1654,11 @@ body.is-preload #footer {
 	margin: 0 10px 0 0;
 	vertical-align: top;
 	font-size: 15px;
-font: inherit;
+	font: inherit;
 	letter-spacing: 10px;
 }
 
-.debugInputButton{
+.debugInputButton {
 	width: auto;
 	height: 35px;
 	background-color: #383b3d;
@@ -1671,5 +1671,21 @@ font: inherit;
 	margin: 0;
 	vertical-align: top;
 	font-size: 15px;
-font: inherit;
+	font: inherit;
+}
+
+.serviceBox {
+	margin: 0 0 10px 0;
+	padding: 10px;
+	border: 1px solid white;
+	background-color: transparent;
+	transition: background-color 0.2s ease;
+}
+
+.serviceBox:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.serviceBox p {
+	margin: 0;
 }
