@@ -1623,6 +1623,26 @@ body.is-preload #footer {
 	}
 }
 
+/*F10wer logo*/
+.F10werLogo {
+	width: auto;
+	opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+	.F10werLogo {
+		height: 46px;
+		margin-bottom: 8px;
+	}
+}
+
+@media (min-width: 481px) {
+	.F10werLogo {
+		height: 60px;
+		margin-bottom: 10px;
+	}
+}
+
 /* debug */
 
 .debug {
