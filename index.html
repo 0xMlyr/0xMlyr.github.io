@@ -3,12 +3,22 @@
 
 <head>
 
-    <title>MLYR's WebSite</title>
+    <title>MLYR's WebSite - 慕灵一儒的个人主页</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="慕灵一儒(MLYR)的个人网站，提供次元导航、个人博客、文件分享等服务。风雨暗千家，诗酒趁年华。">
+    <meta name="author" content="MLYR, 慕灵一儒">
     <link rel="shortcut icon" href="./IMG/tag.svg">
-    <meta name="keywords" content="MLYR,慕灵一儒,0xMlyr,MLYR1024">
+    <meta name="keywords" content="MLYR,慕灵一儒,0xMlyr,MLYR1024,个人网站,博客,导航">
+    <!-- 资源预加载 -->
+    <link rel="preload" href="./IMG/head.webp" as="image">
+    <link rel="preload" href="./CSS/main.css" as="style">
+    <link rel="preload" href="./JS/main.js" as="script">
+
     <link rel="stylesheet" href="./CSS/main.css">
+    <!-- Font Awesome 备用CDN -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css"
+        onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';">
 
     <noscript>
         <link rel="stylesheet" href="./CSS/noscript.css">
@@ -34,7 +44,7 @@
         <!-- Header -->
         <header id="header">
             <div class="logo">
-                <img src="./IMG/head.webp" id="logo" class="logo" alt="N/A">
+                <img src="./IMG/head.webp" id="logo" class="logo" alt="MLYR个人头像">
             </div>
 
             <div class="content">
@@ -65,7 +75,8 @@
                 <ul>
                     <li><a href="#error"><i class="fa fa-home"></i>次元导航</a></li>
                     <li><a href="#error"><i class="fa fa-magic"></i>慕灵者说</a></li>
-                    <li><a href="http://service.mlyr.top:7070/"><i class="fa fa-rocket"></i>七号仓库</a></li>
+                    <li><a href="http://service.mlyr.top:7070/" target="_blank" rel="noopener noreferrer"><i
+                                class="fa fa-rocket"></i>七号仓库</a></li>
                     <li><a href="#error"><i class="fa fa-globe"></i>在线项目</a></li>
                     <li><a href="#error"><i class="fa fa-puzzle-piece"></i>还没想好</a></li>
                 </ul>
@@ -84,7 +95,7 @@
                 <div class="site-sub-title">不忘初心 • 一生浪漫</div>
 
                 <span class="image main">
-                    <img src="./IMG/headbg.webp" loading="lazy" alt="N/A">
+                    <img src="./IMG/headbg.webp" loading="lazy" alt="网站背景图">
                 </span>
 
                 <div style="text-align: right;" class="nextinfo">
@@ -98,10 +109,10 @@
 
                 <div style="display: flex; height: auto;">
                     <img src="https://www.emojiall.com/images/240/microsoft-teams/1f928.png" class="SleepImg default"
-                        loading="lazy" style="transition: opacity 1s ease-in-out;" alt="N/A">
+                        loading="lazy" style="transition: opacity 1s ease-in-out;" alt="睡眠表情">
                     <img src="https://www.emojiall.com/images/240/microsoft-teams/1f60e.png" class="SleepImg alternate"
                         loading="lazy" style="position: absolute; opacity: 0; transition: opacity 1s ease-in-out;"
-                        alt="N/A">
+                        alt="太阳镜表情">
 
                     <div id="details" onclick="toggleDetails()">
                         <p style="margin-bottom: 0;">这是我的门户网站，</p>
@@ -178,9 +189,9 @@
             <article id="link">
                 <h2 class="major">Contact</h2>
 
-                <img src="./IMG/gpt-4-motif.svg" alt="N/A">
+                <img src="./IMG/gpt-4-motif.svg" alt="GPT-4图标">
                 <p style="margin-top: 20px; margin-bottom: 1rem"><strong>E-mail:</strong> mlyr.255.1024@gmail.com<br>
-                     <strong>QQ:</strong> 2226471376 <br> <strong>X Twitter:</strong> @MLYR1024
+                    <strong>QQ:</strong> 2226471376 <br> <strong>X Twitter:</strong> @MLYR1024
                 </p>
 
                 <p>希望我们不会为自己的过去后悔......</p>
@@ -206,7 +217,10 @@
                     <p>_ IP归属地：<span id="ipLocation"></span></p>
                 </div>
 
-                <p style="font-size: 0.6rem; opacity: 0.3; margin-bottom: 2rem;"><span id="userAgentInfo"></span></p>
+                <p style="font-size: 0.6rem; opacity: 0.3; margin-bottom: 2rem;"><span id="userAgentInfo"></span>
+                    <a style="color: pink;" href="https://api.suyanw.cn/" target="_blank"
+                        rel="noopener noreferrer">素颜API</a>
+                </p>
             </article>
 
             <!-- ERROR 502 -->
@@ -231,7 +245,7 @@
                 <h2 class="major">colorful egg</h2>
                 <div>
                     <span class="image main">
-                        <img src="./IMG/f10wer.webp" loading="lazy" alt="N/A">
+                        <img src="./IMG/f10wer.webp" loading="lazy" alt="F10wer彩蛋图片">
                     </span>
                     <p></p>
                 </div>
@@ -255,7 +269,7 @@
 
                 <!--Bottom logo display-->
                 <div class="caution">
-                    <a href="https://github.com/0xMlyr" target="_blank">
+                    <a href="https://github.com/0xMlyr" target="_blank" rel="noopener noreferrer">
                         <div class="image-container">
                             <img src="./IMG/github-mark-white.svg" alt="GitHub Logo">
                         </div>
@@ -266,14 +280,15 @@
                 </div>
 
                 <div class="copyname">
-                    <a href="#debug"><img src="./IMG/writer_low.webp" class="seal" loading="lazy" alt="N/A"></a>
+                    <a href="#debug"><img src="./IMG/writer_low.webp" class="seal" loading="lazy" alt="作者印章"></a>
                 </div>
 
-                <p>© Copyright by <strong><a href="http://www.mlyr.top" style="text-decoration:none;">MLYR</a></strong>
+                <p>© Copyright by <strong><a href="http://www.mlyr.top" style="text-decoration:none;" target="_blank"
+                            rel="noopener noreferrer">MLYR</a></strong>
                     2020-2025<br>
                     Network serviced by<strong> Cloudflare</strong><br>
                     Opensource Unknow License<br>
-                    <a style="text-decoration:none;">最后更新于: 2025.07.03.13.47.32</a>
+                    <a style="text-decoration:none;">最后更新于: 2025.09.30.13.47.32</a>
                 </p>
 
             </div>
