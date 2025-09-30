@@ -79,7 +79,15 @@ async function getIPLocation(ip) {
 // 更新当前时间
 function updateTime() {
     const now = new Date();
-    const timeString = now.toISOString().replace("T", " ").substring(0, 19);
+    const timeString = now.getFullYear() + '-' + 
+        String(now.getMonth() + 1).padStart(2, '0') + '-' + 
+        String(now.getDate()).padStart(2, '0') + ' ' + 
+        String(now.getHours()).padStart(2, '0') + ':' + 
+        String(now.getMinutes()).padStart(2, '0') + ':' + 
+        String(now.getSeconds()).padStart(2, '0') + 
+        ' (UTC' + (now.getTimezoneOffset() > 0 ? '-' : '+') + 
+        String(Math.abs(Math.floor(now.getTimezoneOffset() / 60))).padStart(2, '0') + ':' + 
+        String(Math.abs(now.getTimezoneOffset() % 60)).padStart(2, '0') + ')';
     document.getElementById('sysTime').textContent = timeString;
 }
 
