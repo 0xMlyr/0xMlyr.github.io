@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
 
-<head> 
+<head>
 
     <title>MLYR's WebSite</title>
     <meta charset="utf-8">
@@ -74,8 +74,7 @@
                 <ul>
                     <li><a href="#error"><i class="fa fa-home"></i>次元导航</a></li>
                     <li><a href="#error"><i class="fa fa-magic"></i>慕灵者说</a></li>
-                    <li><a href="http://service.mlyr.top:7070/" target="_blank" rel="noopener noreferrer"><i
-                                class="fa fa-rocket"></i>七号仓库</a></li>
+                    <li><a href="#error"><i class="fa fa-rocket"></i>七号仓库</a></li>
                     <li><a href="#error"><i class="fa fa-globe"></i>在线项目</a></li>
                     <li><a href="#error"><i class="fa fa-puzzle-piece"></i>还没想好</a></li>
                 </ul>
@@ -120,6 +119,15 @@
                 </div>
 
                 <div id="detailsopen">
+                    <div>
+                        <p>Sorry, I'm worn out...<br>
+                        Wait for confessing my sin,<br>
+                        concealing them all.<br>
+                        Let the world dissolve my gloom,<br>
+                        i'll fix this Page's Service later...</p>
+                    </div>
+
+                    <!--
                     <div class="serviceBox">
                         <p><strong>次元导航：<span style="color: rgb(0, 255, 21);">8888</span>*</strong><br>
                             海纳百川的网址导航页。</p>
@@ -143,45 +151,45 @@
                     <p><br>* 以上服务项访问域名均为：<br>http://service.mlyr.top:<strong><span
                                 style="color: rgb(0, 255, 21);">xxxx</span></strong><br>访问特定端口(<strong><span
                                 style="color: rgb(0, 255, 21);">xxxx</span></strong>)以前往特定服务项。</p>
-                </div>
-                <script>
-                    window.addEventListener('DOMContentLoaded', function () {
-                        var detailsOpen = document.getElementById('detailsopen');
-                        detailsOpen.classList.remove('open');
-                    });
+                </div>-->
+                    <script>
+                        window.addEventListener('DOMContentLoaded', function () {
+                            var detailsOpen = document.getElementById('detailsopen');
+                            detailsOpen.classList.remove('open');
+                        });
 
-                    function toggleDetails() {
-                        var detailsOpen = document.getElementById('detailsopen');
-                        var defaultImg = document.querySelector('.SleepImg.default');
-                        var alternateImg = document.querySelector('.SleepImg.alternate');
+                        function toggleDetails() {
+                            var detailsOpen = document.getElementById('detailsopen');
+                            var defaultImg = document.querySelector('.SleepImg.default');
+                            var alternateImg = document.querySelector('.SleepImg.alternate');
 
-                        if (detailsOpen.classList.contains('open')) {
-                            // 关闭详情，恢复默认图片
-                            detailsOpen.style.height = '0';
-                            detailsOpen.style.opacity = 0;
-                            setTimeout(function () {
-                                detailsOpen.classList.remove('open');
-                            }, 2000);
-                            defaultImg.style.opacity = 1;
-                            alternateImg.style.opacity = 0;
-                        } else {
-                            // 打开详情，切换图片
-                            detailsOpen.classList.add('open');
-                            detailsOpen.style.height = detailsOpen.scrollHeight + 'px';
-                            setTimeout(function () {
-                                detailsOpen.style.opacity = 1;
-                            }, 0);
-                            defaultImg.style.opacity = 0;
-                            alternateImg.style.opacity = 1;
+                            if (detailsOpen.classList.contains('open')) {
+                                // 关闭详情，恢复默认图片
+                                detailsOpen.style.height = '0';
+                                detailsOpen.style.opacity = 0;
+                                setTimeout(function () {
+                                    detailsOpen.classList.remove('open');
+                                }, 2000);
+                                defaultImg.style.opacity = 1;
+                                alternateImg.style.opacity = 0;
+                            } else {
+                                // 打开详情，切换图片
+                                detailsOpen.classList.add('open');
+                                detailsOpen.style.height = detailsOpen.scrollHeight + 'px';
+                                setTimeout(function () {
+                                    detailsOpen.style.opacity = 1;
+                                }, 0);
+                                defaultImg.style.opacity = 0;
+                                alternateImg.style.opacity = 1;
+                            }
                         }
-                    }
-                </script>
+                    </script>
 
-                <p>希望对你有所帮助 (◦˙▽˙◦)</p>
+                    <p>希望对你有所帮助 (◦˙▽˙◦)</p>
 
-                <div style="text-align: right;" class="nextinfo">
-                    <a href="#link">不懂问我？</a>
-                </div>
+                    <div style="text-align: right;" class="nextinfo">
+                        <a href="#link">不懂问我？</a>
+                    </div>
             </article>
 
             <!--Contact-->
@@ -190,7 +198,7 @@
 
                 <img src="./IMG/gpt-4-motif.svg" alt="GPT-4图标">
                 <p style="margin-top: 20px; margin-bottom: 1rem"><strong>E-mail:</strong> support@mlyr.com<br>
-                    <strong>QQ:</strong> 2226471376 <br> <strong>X Twitter:</strong> @MLYR1024
+                    <strong>TG:</strong> mulingyiru (可能已更改) <br> <strong>X Twitter:</strong> @MLYR_1024
                 </p>
 
                 <p>希望我们不会为自己的过去后悔......</p>
@@ -226,7 +234,7 @@
             <article id="error">
                 <h2 class="major">ERROR</h2>
 
-                <p>暂未开放 随缘更新！</p>
+                <p>暂未开放.</p>
             </article>
 
             <!-- DEBUG -->
