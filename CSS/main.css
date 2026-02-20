@@ -1643,16 +1643,16 @@ body.is-preload #footer {
 
 /* debug */
 
-.debug {
+.debug p {
+	margin: 0;
+	color: #ffffff;
+}
+
+.debug-port {
 	display: flex;
 	align-items: flex-start;
 	text-align: left;
 	margin-bottom: 1rem;
-}
-
-.debug p {
-	margin: 0;
-	color: #ffffff;
 }
 
 #debug-input {
@@ -1706,4 +1706,11 @@ body.is-preload #footer {
 
 .serviceBox p {
 	margin: 0;
+}
+
+.logo-small {
+    height: auto;
+    width: 140px; /* 确保宽度根据比例缩放 */
+    object-fit: contain; /* 进一步确保图片内容完整且不变形 */
+	border: 1px solid #FFFFFF; /* 5px 宽的纯白实线边框 */
 }
