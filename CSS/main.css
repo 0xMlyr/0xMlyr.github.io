@@ -1621,38 +1621,22 @@ body.is-preload #footer {
 	}
 }
 
-/*F10wer logo*/
-.F10werLogo {
-	width: auto;
-	opacity: 0.9;
-}
-
-@media (max-width: 480px) {
-	.F10werLogo {
-		height: 46px;
-		margin-bottom: 8px;
-	}
-}
-
-@media (min-width: 481px) {
-	.F10werLogo {
-		height: 60px;
-		margin-bottom: 10px;
-	}
-}
-
 /* debug */
+.debug-box {
+	width: 100%;
+	height: auto;
+	background-color: #383b3d;
+	padding: 15px;
+	border-radius: 15px;
+	margin-top: 0;
+	margin-bottom: 10px;
+	margin-left: 0;
+	margin-right: 0;
+}
 
-.debug p {
+.debug-box p {
 	margin: 0;
 	color: #ffffff;
-}
-
-.debug-port {
-	display: flex;
-	align-items: flex-start;
-	text-align: left;
-	margin-bottom: 1rem;
 }
 
 #debug-input {
@@ -1662,7 +1646,7 @@ body.is-preload #footer {
 .debugInputBox {
 	width: 105px;
 	height: 35px;
-	background-color: #383b3d;
+	background-color: #4e4e4e;
 	border-top: none;
 	border-left: none;
 	border-right: none;
@@ -1679,17 +1663,17 @@ body.is-preload #footer {
 .debugInputButton {
 	width: auto;
 	height: 35px;
-	background-color: #383b3d;
-	color: rgba(255, 255, 255, 0.6);
-	border-top: none;
-	border-left: none;
-	border-right: none;
-	border-bottom: 5px solid rgb(32, 122, 48);
-	border-radius: 0;
+	background-color: #ffffff00;
+	color: rgb(255, 255, 255);
+	border:none;
 	margin: 0;
-	vertical-align: top;
-	font-size: 15px;
 	font: inherit;
+	display: block;
+	padding: 0;
+}
+
+.debugInputButton:hover {
+    cursor: pointer; /* 鼠标变成小手形状 */
 }
 
 .serviceBox {
@@ -1712,5 +1696,5 @@ body.is-preload #footer {
     height: auto;
     width: 140px; /* 确保宽度根据比例缩放 */
     object-fit: contain; /* 进一步确保图片内容完整且不变形 */
-	border: 1px solid #FFFFFF; /* 5px 宽的纯白实线边框 */
+	border-radius: 7px;
 }
