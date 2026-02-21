@@ -9,16 +9,36 @@
     <meta name="author" content="MLYR, 慕灵一儒">
     <link rel="shortcut icon" href="./IMG/tag.svg">
     <meta name="keywords" content="MLYR,慕灵一儒,0xMlyr,MLYR1024,个人网站,博客,导航">
+    <meta name="description" content="慕灵一儒(MLYR)的个人门户网站 - 风雨暗千家·诗酒趁年华。提供博客、网盘、导航等服务。">
     <!-- 资源预加载 -->
     <link rel="preload" href="./IMG/head.webp" as="image">
     <link rel="preload" href="./CSS/main.css" as="style">
     <link rel="preload" href="./JS/main.js" as="script">
 
     <link rel="stylesheet" href="./CSS/main.css">
+
+    <!-- JSON-LD 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "慕灵一儒",
+        "alternateName": "MLYR",
+        "url": "https://www.mlyr.top",
+        "email": "support@mlyr.com",
+        "sameAs": [
+            "https://github.com/0xMlyr"
+        ],
+        "jobTitle": "Developer",
+        "description": "个人门户网站，提供博客、网盘、导航等服务"
+    }
+    </script>
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" id="fontawesome-css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css"
+        id="fontawesome-css">
     <script>
-        document.getElementById('fontawesome-css').onerror = function() {
+        document.getElementById('fontawesome-css').onerror = function () {
             this.onerror = null;
             this.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
         };
@@ -60,10 +80,10 @@
 
             <nav>
                 <ul>
-                    <li><a href="#intro"><i class="fa fa-bookmark-o"></i>介绍</a></li>
-                    <li><a href="#work"><i class="fa fa-hdd-o"></i>服务</a></li>
-                    <li><a href="#link"><i class="fa fa-envelope-o"></i>联系</a></li>
-                    <li><a href="#about"><i class="fa fa-code"></i>关于</a></li>
+                    <li><a href="#intro" title="查看网站介绍"><i class="fa fa-bookmark-o"></i>介绍</a></li>
+                    <li><a href="#work" title="查看服务项目"><i class="fa fa-hdd-o"></i>服务</a></li>
+                    <li><a href="#link" title="联系方式"><i class="fa fa-envelope-o"></i>联系</a></li>
+                    <li><a href="#about" title="关于本站"><i class="fa fa-code"></i>关于</a></li>
                 </ul>
             </nav>
 
@@ -76,17 +96,13 @@
 
             <nav>
                 <ul>
-                    <li><a href="#error"><i class="fa fa-home"></i>次元导航</a></li>
-
-                    <li><a href="http://vps.mlyr.top:5140" target="_blank" rel="noopener noreferrer"><i
+                    <li><a href="#error" title="次元导航"><i class="fa fa-home"></i>次元导航</a></li>
+                    <li><a href="http://vps.mlyr.top:5140" target="_blank" rel="noopener noreferrer" title="慕灵者说"><i
                                 class="fa fa-magic"></i>慕灵者说</a></li>
-
-                    <li><a href="http://vps.mlyr.top:5244" target="_blank" rel="noopener noreferrer"><i
+                    <li><a href="http://vps.mlyr.top:5244" target="_blank" rel="noopener noreferrer" title="七号仓库"><i
                                 class="fa fa-rocket"></i>七号仓库</a></li>
-
-                    <li><a href="#error"><i class="fa fa-globe"></i>在线项目</a></li>
-
-                    <li><a href="#error"><i class="fa fa-puzzle-piece"></i>还没想好</a></li>
+                    <li><a href="#error" title="在线项目"><i class="fa fa-globe"></i>在线项目</a></li>
+                    <li><a href="#error" title="更多服务"><i class="fa fa-puzzle-piece"></i>还没想好</a></li>
                 </ul>
             </nav>
 
@@ -107,7 +123,7 @@
                 </span>
 
                 <div style="text-align: right;" class="nextinfo">
-                    <a href="#work">查看说明</a>
+                    <a href="#work" title="查看服务说明">查看说明</a>
                 </div>
             </article>
 
@@ -139,69 +155,67 @@
                             i'll fix this Page's Service later...</p>
                     </div>
 
-                    <!--
                     <div class="serviceBox">
-                        <p><strong>次元导航：<span style="color: rgb(0, 255, 21);">8888</span>*</strong><br>
+                        <p><strong>次元导航：</strong>
                             海纳百川的网址导航页。</p>
                     </div>
                     <div class="serviceBox">
-                        <p><strong>慕灵者说：<span style="color: rgb(0, 255, 21);">8081</span>*</strong><br>
+                        <p><strong>慕灵者说：</strong>
                             个人博客，文字是颗粒状的照片。</p>
                     </div>
                     <div class="serviceBox">
-                        <p><strong>七号仓库：<span style="color: rgb(0, 255, 21);">7070</span>*</strong><br>
+                        <p><strong>七号仓库：</strong>
                             由alist驱动的共享网盘，里边有什么呢?</p>
                     </div>
                     <div class="serviceBox">
-                        <p><strong>在线项目：<span style="color: rgb(0, 255, 21);">7077</span>*</strong><br>
-                            施工中...一些个人项目 (一中OnLine)。</p>
+                        <p><strong>在线项目：</strong>
+                            施工中...一些个人项目。</p>
                     </div>
                     <div class="serviceBox">
-                        <p><strong>还没想好：<span style="color: rgb(0, 255, 21);">N/A</span>*</strong><br>
+                        <p><strong>还没想好：</strong>
                             嗯，还没想好在这里干点啥。</p>
                     </div>
-                    <p><br>* 以上服务项访问域名均为：<br>http://service.mlyr.top:<strong><span
-                                style="color: rgb(0, 255, 21);">xxxx</span></strong><br>访问特定端口(<strong><span
-                                style="color: rgb(0, 255, 21);">xxxx</span></strong>)以前往特定服务项。</p>
-                </div>-->
-                    <script>
-                        window.addEventListener('DOMContentLoaded', function () {
-                            var detailsOpen = document.getElementById('detailsopen');
-                            detailsOpen.classList.remove('open');
-                        });
+                    
+                </div>
 
-                        function toggleDetails() {
-                            var detailsOpen = document.getElementById('detailsopen');
-                            var defaultImg = document.querySelector('.SleepImg.default');
-                            var alternateImg = document.querySelector('.SleepImg.alternate');
+                <script>
+                    window.addEventListener('DOMContentLoaded', function () {
+                        var detailsOpen = document.getElementById('detailsopen');
+                        detailsOpen.classList.remove('open');
+                    });
 
-                            if (detailsOpen.classList.contains('open')) {
-                                // 关闭详情，恢复默认图片
-                                detailsOpen.style.height = '0';
-                                detailsOpen.style.opacity = 0;
-                                setTimeout(function () {
-                                    detailsOpen.classList.remove('open');
-                                }, 2000);
-                                defaultImg.style.opacity = 1;
-                                alternateImg.style.opacity = 0;
-                            } else {
-                                // 打开详情，切换图片
-                                detailsOpen.classList.add('open');
-                                detailsOpen.style.height = detailsOpen.scrollHeight + 'px';
-                                setTimeout(function () {
-                                    detailsOpen.style.opacity = 1;
-                                }, 0);
-                                defaultImg.style.opacity = 0;
-                                alternateImg.style.opacity = 1;
-                            }
+                    function toggleDetails() {
+                        var detailsOpen = document.getElementById('detailsopen');
+                        var defaultImg = document.querySelector('.SleepImg.default');
+                        var alternateImg = document.querySelector('.SleepImg.alternate');
+
+                        if (detailsOpen.classList.contains('open')) {
+                            // 关闭详情，恢复默认图片
+                            detailsOpen.style.height = '0';
+                            detailsOpen.style.opacity = 0;
+                            setTimeout(function () {
+                                detailsOpen.classList.remove('open');
+                            }, 2000);
+                            defaultImg.style.opacity = 1;
+                            alternateImg.style.opacity = 0;
+                        } else {
+                            // 打开详情，切换图片
+                            detailsOpen.classList.add('open');
+                            detailsOpen.style.height = detailsOpen.scrollHeight + 'px';
+                            setTimeout(function () {
+                                detailsOpen.style.opacity = 1;
+                            }, 0);
+                            defaultImg.style.opacity = 0;
+                            alternateImg.style.opacity = 1;
                         }
-                    </script>
+                    }
+                </script>
 
-                    <p>希望对你有所帮助 (◦˙▽˙◦)</p>
+                <p>希望对你有所帮助 (◦˙▽˙◦)</p>
 
-                    <div style="text-align: right;" class="nextinfo">
-                        <a href="#link">不懂问我？</a>
-                    </div>
+                <div style="text-align: right;" class="nextinfo">
+                    <a href="#link">不懂问我？</a>
+                </div>
             </article>
 
             <!--Contact-->
@@ -347,8 +361,8 @@
                             rel="noopener noreferrer">MLYR</a></strong>
                     2020-2025<br>
                     Network serviced by<strong> Cloudflare</strong><br>
-                    Opensource Unknow License<br>
-                    <a style="text-decoration:none;">最后更新于: 2025.09.30.13.47.32</a>
+                    Opensource Unknown License<br>
+                    <a style="text-decoration:none;">最后更新于: 2026.02.18.13.47.32</a>
                 </p>
 
             </div>
@@ -393,14 +407,14 @@
     <div id="bg"></div>
 
     <!-- Scripts -->
-    <script src="./JS/jquery.min.js"></script>
-    <script src="./JS/browser.min.js"></script>
-    <script src="./JS/breakpoints.min.js"></script>
-    <script src="./JS/util.js"></script>
-    <script src="./JS/main.js"></script>
-    <script src="./JS/cplayer.js"></script>
-    <script src="./JS/ip-record.js"></script>
-    <script src="./JS/debug.js"></script>
+    <script src="./JS/jquery.min.js" defer></script>
+    <script src="./JS/browser.min.js" defer></script>
+    <script src="./JS/breakpoints.min.js" defer></script>
+    <script src="./JS/util.js" defer></script>
+    <script src="./JS/main.js" defer></script>
+    <script src="./JS/cplayer.js" defer></script>
+    <script src="./JS/ip-record.js" defer></script>
+    <script src="./JS/debug.js" defer></script>
 
     <!--Music-->
     <script>
