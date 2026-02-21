@@ -16,8 +16,13 @@
 
     <link rel="stylesheet" href="./CSS/main.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css"
-        onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" id="fontawesome-css">
+    <script>
+        document.getElementById('fontawesome-css').onerror = function() {
+            this.onerror = null;
+            this.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+        };
+    </script>
 
     <noscript>
         <link rel="stylesheet" href="./CSS/noscript.css">
