@@ -2,7 +2,6 @@
 <html lang="zh-CN">
 
 <head>
-
     <title>MLYR's WebSite</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -10,14 +9,21 @@
     <link rel="shortcut icon" href="./IMG/tag.svg">
     <meta name="keywords" content="MLYR,慕灵一儒,0xMlyr,MLYR1024,个人网站,博客,导航">
     <meta name="description" content="慕灵一儒(MLYR)的个人门户网站 - 风雨暗千家·诗酒趁年华。提供博客、网盘、导航等服务。">
-    <!-- 资源预加载 -->
+    
+    <!-- 性能优化：DNS预解析，减少外部资源请求延迟 -->
+    <link rel="dns-prefetch" href="https://api.suyanw.cn">
+    <link rel="dns-prefetch" href="https://www.emojiall.com">
+    <link rel="dns-prefetch" href="https://music.163.com">
+    <link rel="dns-prefetch" href="https://p1.music.126.net">
+    
+    <!-- 性能优化：预加载关键资源，提升LCP -->
     <link rel="preload" href="./IMG/head.webp" as="image">
     <link rel="preload" href="./CSS/main.css" as="style">
     <link rel="preload" href="./JS/main.js" as="script">
 
     <link rel="stylesheet" href="./CSS/main.css">
 
-    <!-- JSON-LD  -->
+    <!-- SEO优化：结构化数据标记 -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -34,7 +40,7 @@
     }
     </script>
 
-    <!-- Font Awesome -->
+    <!-- 图标库：异步加载Font Awesome，带CDN降级 -->
     <link rel="preconnect" href="https://cdn.staticfile.org">
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css"
         id="fontawesome-css" media="print" onload="this.media='all'">
@@ -47,6 +53,7 @@
         };
     </script>
 
+    <!-- 降级方案：禁用JS时的样式 -->
     <noscript>
         <link rel="stylesheet" href="./CSS/noscript.css">
     </noscript>
@@ -109,11 +116,12 @@
                 </ul>
             </nav>
 
+            <!-- 音乐播放器容器 -->
             <div id="app"></div>
 
         </header>
 
-        <!-- Main -->
+        <!-- 主内容区：文章弹窗容器 -->
         <div id="main">
 
             <!-- Intro -->
@@ -122,7 +130,7 @@
                 <div class="site-sub-title">不忘初心 • 一生浪漫</div>
 
                 <span class="image main">
-                    <img src="./IMG/headbg.webp" loading="lazy" alt="网站背景图">
+                    <img src="./IMG/headbg.webp" fetchpriority="high" alt="网站背景图">
                 </span>
 
                 <div style="text-align: right;" class="nextinfo">
@@ -134,6 +142,7 @@
             <article id="work">
                 <h2 class="major">Service</h2>
 
+                <!-- emoji延迟加载：先显示loading占位符，3秒后替换为真实图片 -->
                 <div style="display: flex; height: auto;">
                     <img src="./IMG/loading.svg" class="SleepImg default" data-emoji="https://www.emojiall.com/images/240/microsoft-teams/1f928.png"
                         fetchpriority="low" style="transition: opacity 1s ease-in-out;" alt="加载中">
@@ -178,6 +187,7 @@
 
                 </div>
 
+                <!-- 服务详情展开/收起逻辑 -->
                 <script>
                     window.addEventListener('DOMContentLoaded', function () {
                         var detailsOpen = document.getElementById('detailsopen');
@@ -252,14 +262,13 @@
                 </p>
             </article>
 
-            <!-- ERROR 502 -->
+            <!-- 错误页面 -->
             <article id="error">
                 <h2 class="major">ERROR</h2>
-
                 <p>暂未开放</p>
             </article>
 
-            <!-- DEBUG -->
+            <!-- 调试工具页面 -->
             <article id="debug">
                 <h2 class="major">DEBUG</h2>
 
@@ -335,20 +344,17 @@
 
         </div>
 
-        <!-- Footer -->
+        <!-- 页脚 -->
         <footer id="footer">
-
             <div class="content">
                 <div class="inner"></div>
             </div>
 
-            <!--Bottom copyright information-->
             <div class="copyright">
-
                 <!-- 响应式占位容器 -->
                 <div class="emptybox"></div>
 
-                <!--Bottom logo display-->
+                <!-- GitHub链接 -->
                 <div class="caution">
                     <a href="https://github.com/0xMlyr" target="_blank" rel="noopener noreferrer">
                         <div class="image-container">
@@ -376,53 +382,69 @@
 
             </div>
 
-            <div id="quote-container" class="quote">
-            </div>
+            <!-- 随机诗句容器 -->
+            <div id="quote-container" class="quote"></div>
 
+            <!-- 随机诗句获取：带重试机制和降级方案 -->
             <script>
-                function getQuote() {
-                    const apiUrl = 'https://api.suyanw.cn/api/gushi.php?type=json';
+                (function() {
+                    let retryCount = 0;
+                    const maxRetries = 3;
+                    
+                    function getQuote() {
+                        const apiUrl = 'https://api.suyanw.cn/api/gushi.php?type=json';
 
-                    fetch(apiUrl)
-                        .then(response => response.json())
-                        .then(data => {
-                            const quote = data.text;
-                            if (quote.length <= 27) {
-                                displayQuote(quote);
-                            } else {
-                                getQuote(); // 重新获取语录
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error fetching quote:', error);
-                        });
-                }
+                        fetch(apiUrl)
+                            .then(response => response.json())
+                            .then(data => {
+                                const quote = data.text;
+                                if (quote && quote.length <= 27) {
+                                    displayQuote(quote);
+                                    retryCount = 0;
+                                } else if (retryCount < maxRetries) {
+                                    retryCount++;
+                                    getQuote();
+                                } else {
+                                    displayQuote('风雨暗千家 · 诗酒趁年华');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error fetching quote:', error);
+                                displayQuote('风雨暗千家 · 诗酒趁年华');
+                            });
+                    }
 
-                function displayQuote(quote) {
-                    const quoteContainer = document.getElementById('quote-container');
-                    const p = document.createElement('p');
-                    p.textContent = quote;
-                    quoteContainer.appendChild(p);
-                }
+                    function displayQuote(quote) {
+                        const quoteContainer = document.getElementById('quote-container');
+                        if (quoteContainer) {
+                            const p = document.createElement('p');
+                            p.textContent = quote;
+                            quoteContainer.appendChild(p);
+                        }
+                    }
 
-                getQuote(); // 页面加载时获取并显示语录
+                    getQuote();
+                })();
             </script>
 
         </footer>
 
     </div>
 
-    <!-- BG -->
+    <!-- 全屏背景容器 -->
     <div id="bg"></div>
 
-    <!-- Scripts -->
+    <!-- 核心脚本：按依赖顺序加载 -->
     <script src="./JS/browser.min.js"></script>
     <script src="./JS/breakpoints.min.js"></script>
     <script src="./JS/main.js"></script>
     <script src="./JS/cplayer.js"></script>
-    <script src="./JS/utils-defer.js" defer></script>
+    
+    <!-- 延迟加载脚本：不阻塞渲染 -->
+    <script src="./JS/utils-defer.js" defer></script> <!-- emoji延迟加载 + debug工具 + IP记录 -->
+    <script src="./JS/log.min.js" defer></script> <!-- 控制台彩蛋 -->
 
-    <!--Music-->
+    <!-- 音乐播放器初始化 -->
     <script>
         let player = new cplayer({
             element: document.getElementById('app'),

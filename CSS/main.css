@@ -1472,29 +1472,54 @@ body.is-preload #footer {
 	transition: height 2s, opacity 2s;
 }
 
-/*jiao*/
+/* ========================================
+ * 页脚响应式布局系统
+ * ========================================
+ * 设计目标：GitHub图标和印章在不同设备上显示在不同位置
+ * 
+ * 桌面端布局：
+ *   [版权文字居中]
+ *   [GitHub图标-左侧]     [印章-右侧]
+ *   [诗句]
+ * 
+ * 移动端布局：
+ *   [70px空白区域 - 用于放置图标]
+ *     ↓ 图标显示在这个空间内
+ *     [GitHub图标]  [印章]
+ *   [版权文字]
+ *   [诗句]
+ * 
+ * 实现原理：
+ * 1. .emptybox 在移动端创造70px垂直空间，桌面端高度为0
+ * 2. .caution 和 .copyname 使用绝对定位，通过媒体查询调整位置
+ * 3. 移动端：图标定位在emptybox创造的空间内，版权文字被推到下方
+ * 4. 桌面端：emptybox不占空间，图标分布在版权文字左右两侧
+ * ======================================== */
 
+/* GitHub图标容器 */
 .caution {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	margin-top: 5px;
 }
 
+/* 移动端：图标靠上居中偏右 */
 @media (max-width: 480px) {
 	.caution {
 		width: 85px;
 		height: 75px;
-		top: 14%;
-		right: 40%;
+		top: 14%;      /* 靠近顶部，显示在emptybox空间内 */
+		right: 40%;    /* 居中偏右 */
 	}
 }
 
+/* 桌面端：图标在左侧 */
 @media (min-width: 481px) {
 	.caution {
 		width: 85px;
 		height: 75px;
-		top: 28%;
-		right: 85%;
+		top: 28%;      /* 相对靠下 */
+		right: 85%;    /* 定位在左侧 */
 	}
 }
 
@@ -1503,26 +1528,29 @@ body.is-preload #footer {
 	height: 48px;
 }
 
+/* 印章容器 */
 .copyname {
 	position: absolute;
 	transform: translate(-50%, -50%);
 }
 
+/* 移动端：印章靠上居中偏左 */
 @media (max-width: 480px) {
 	.copyname {
 		width: 40px;
 		height: 73px;
-		top: 17%;
-		right: 26%;
+		top: 17%;      /* 靠近顶部，显示在emptybox空间内 */
+		right: 26%;    /* 居中偏左 */
 	}
 }
 
+/* 桌面端：印章在右侧 */
 @media (min-width: 481px) {
 	.copyname {
 		width: 60px;
 		height: 73px;
-		top: 32%;
-		right: -30%;
+		top: 32%;      /* 相对靠下 */
+		right: -30%;   /* 定位在右侧 */
 	}
 }
 
@@ -1549,19 +1577,25 @@ body.is-preload #footer {
 	box-shadow: 0 0 20px 1px rgb(255, 255, 255);
 }*/
 
+/* 响应式垂直占位符 - 核心技术债组件
+ * 作用：在移动端为绝对定位的图标创造显示空间
+ * 桌面端：高度为0，完全隐身，不影响布局
+ * 移动端：高度70px，撑开垂直空间，让图标有地方显示，同时把版权文字推到下方 */
 .emptybox {
 	width: 100%;
 }
 
+/* 移动端：创造70px垂直空间 */
 @media (max-width: 480px) {
 	.emptybox {
-		height: 70px;
+		height: 70px;  /* 为.caution和.copyname的绝对定位提供显示空间 */
 	}
 }
 
+/* 桌面端：高度为0，不占据空间 */
 @media (min-width: 481px) {
 	.emptybox {
-		height: 0px;
+		height: 0px;   /* 隐身，图标通过绝对定位分布在左右两侧 */
 	}
 }
 
