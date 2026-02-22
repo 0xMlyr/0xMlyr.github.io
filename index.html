@@ -10,20 +10,20 @@
     <meta name="keywords" content="MLYR,慕灵一儒,0xMlyr,MLYR1024,个人网站,博客,导航">
     <meta name="description" content="慕灵一儒(MLYR)的个人门户网站 - 风雨暗千家·诗酒趁年华。提供博客、网盘、导航等服务。">
 
-    <!-- 性能优化：DNS预解析，减少外部资源请求延迟 -->
+    <!-- DNS预解析 -->
     <link rel="dns-prefetch" href="https://api.suyanw.cn">
     <link rel="dns-prefetch" href="https://www.emojiall.com">
     <link rel="dns-prefetch" href="https://music.163.com">
     <link rel="dns-prefetch" href="https://p1.music.126.net">
 
-    <!-- 性能优化：预加载关键资源，提升LCP -->
+    <!-- 资源预加载 -->
     <link rel="preload" href="./IMG/head.webp" as="image">
     <link rel="preload" href="./CSS/main.css" as="style">
     <link rel="preload" href="./JS/main.js" as="script">
 
     <link rel="stylesheet" href="./CSS/main.css">
 
-    <!-- SEO优化：结构化数据标记 -->
+    <!-- SEO Json -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -40,7 +40,7 @@
     }
     </script>
 
-    <!-- 图标库：异步加载Font Awesome，带CDN降级 -->
+    <!-- Font Awesome CDN -->
     <link rel="preconnect" href="https://cdn.staticfile.org">
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css"
         id="fontawesome-css" media="print" onload="this.media='all'">
@@ -55,7 +55,6 @@
         };
     </script>
 
-    <!-- 降级方案：禁用JS时的样式 -->
     <noscript>
         <link rel="stylesheet" href="./CSS/noscript.css">
     </noscript>
@@ -118,12 +117,12 @@
                 </ul>
             </nav>
 
-            <!-- 音乐播放器容器 -->
+            <!-- 播放器 -->
             <div id="app"></div>
 
         </header>
 
-        <!-- 主内容区：文章弹窗容器 -->
+        <!-- 弹窗容器 -->
         <div id="main">
 
             <!-- Intro -->
@@ -144,7 +143,7 @@
             <article id="work">
                 <h2 class="major">Service</h2>
 
-                <!-- emoji延迟加载：先显示loading占位符，3秒后替换为真实图片 -->
+                <!-- Emoji延迟加载 -->
                 <div style="display: flex; height: auto;">
                     <img src="./IMG/loading.svg" class="SleepImg default"
                         data-emoji="https://www.emojiall.com/images/240/microsoft-teams/1f928.png" fetchpriority="low"
@@ -190,7 +189,7 @@
 
                 </div>
 
-                <!-- 服务详情展开/收起逻辑：IIFE封装，零全局污染 -->
+                <!-- 详情展开/收起 -->
                 <script>
                     (function () {
                         var detailsBtn = document.getElementById('details');
@@ -220,12 +219,10 @@
                             }
                         }
 
-                        // 初始化：移除open类
                         window.addEventListener('DOMContentLoaded', function () {
                             detailsOpen.classList.remove('open');
                         });
 
-                        // 事件监听器：完全避免全局污染
                         if (detailsBtn) {
                             detailsBtn.addEventListener('click', toggleDetails);
                         }
@@ -237,7 +234,7 @@
                 </div>
             </article>
 
-            <!--Contact-->
+            <!-- Contact -->
             <article id="link">
                 <h2 class="major">Contact</h2>
 
@@ -257,7 +254,7 @@
             <article id="about">
                 <h2 class="major">About</h2>
 
-                <!--IP签名-->
+                <!-- IP签名 -->
                 <p style="margin-bottom: 15px;"><strong>欢迎访问本站，以下是访客档案：</strong></p>
 
                 <div id="infoContainer" class="infoContainer">
@@ -273,13 +270,11 @@
                 </p>
             </article>
 
-            <!-- 错误页面 -->
             <article id="error">
                 <h2 class="major">ERROR</h2>
                 <p>暂未开放</p>
             </article>
 
-            <!-- 调试工具页面 -->
             <article id="debug">
                 <h2 class="major">DEBUG</h2>
 
@@ -355,7 +350,6 @@
 
         </div>
 
-        <!-- 页脚 -->
         <footer id="footer">
             <div class="content">
                 <div class="inner"></div>
@@ -365,7 +359,6 @@
                 <!-- 响应式占位容器 -->
                 <div class="emptybox"></div>
 
-                <!-- GitHub链接 -->
                 <div class="caution">
                     <a href="https://github.com/0xMlyr" target="_blank" rel="noopener noreferrer">
                         <div class="image-container">
@@ -393,10 +386,9 @@
 
             </div>
 
-            <!-- 随机诗句容器 -->
+            <!-- 随机诗句 -->
             <div id="quote-container" class="quote"></div>
 
-            <!-- 随机诗句获取：带重试机制和降级方案 -->
             <script>
                 (function () {
                     let retryCount = 0;
@@ -442,20 +434,19 @@
 
     </div>
 
-    <!-- 全屏背景容器 -->
+    <!-- 全屏背景 -->
     <div id="bg"></div>
 
-    <!-- 核心脚本：按依赖顺序加载 -->
     <script src="./JS/browser.min.js"></script>
     <script src="./JS/breakpoints.min.js"></script>
     <script src="./JS/main.js"></script>
     <script src="./JS/cplayer.js"></script>
 
-    <!-- 延迟加载脚本：不阻塞渲染 -->
-    <script src="./JS/utils-defer.js" defer></script> <!-- emoji延迟加载 + debug工具 + IP记录 -->
-    <script src="./JS/log.min.js" defer></script> <!-- 控制台彩蛋 -->
+    <script src="./JS/utils-defer.js" defer></script>
+    <!-- 控制台彩蛋 -->
+    <script src="./JS/log.min.js" defer></script>
 
-    <!-- 音乐播放器初始化：IIFE封装避免全局污染 -->
+    <!-- 音乐播放器初始化 -->
     <script>
         (function () {
             var player = new cplayer({
