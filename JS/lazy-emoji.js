@@ -2,15 +2,17 @@
 (function() {
     function loadEmojis() {
         requestIdleCallback(() => {
-            const defaultImg = document.querySelector('.SleepImg.default');
-            const alternateImg = document.querySelector('.SleepImg.alternate');
-            
-            if (defaultImg) {
-                defaultImg.src = 'https://www.emojiall.com/images/240/microsoft-teams/1f928.png';
-            }
-            if (alternateImg) {
-                alternateImg.src = 'https://www.emojiall.com/images/240/microsoft-teams/1f60e.png';
-            }
+            const imgs = document.querySelectorAll('.SleepImg[data-emoji]');
+            imgs.forEach(img => {
+                const emojiUrl = img.getAttribute('data-emoji');
+                if (emojiUrl) {
+                    const newImg = new Image();
+                    newImg.onload = () => {
+                        img.src = emojiUrl;
+                    };
+                    newImg.src = emojiUrl;
+                }
+            });
         }, { timeout: 2000 });
     }
 
