@@ -101,10 +101,12 @@ async function getIPAddress() {
         const el = document.getElementById("ipAddress");
         if (el) el.textContent = ip;
         getIPLocation(ip);
+        recordVisit(ip);
     } catch (error) {
         console.error("获取IP地址失败:", error);
         const el = document.getElementById("ipAddress");
         if (el) el.textContent = "获取IP地址失败";
+        recordVisit('unknown');
     }
 }
 
@@ -136,12 +138,45 @@ function updateTime() {
     if (el) el.textContent = timeString;
 }
 
+async function recordVisit(ip) {
+    try {
+        const response = await fetch('https://mlyr.top:4099/api/visit', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ip: ip})
+        });
+        const data = await response.json();
+        if (data.success) updateVisitCount(data.count);
+    } catch (error) {
+        console.error('记录访问失败:', error);
+    }
+}
+
+async function getVisitCount() {
+    try {
+        const response = await fetch('https://mlyr.top:4099/api/count');
+        const data = await response.json();
+        if (data.success) updateVisitCount(data.count);
+    } catch (error) {
+        console.error('获取访问量失败:', error);
+    }
+}
+
+function updateVisitCount(count) {
+    const el = document.querySelector('.copyright-text p');
+    if (el) {
+        const html = el.innerHTML;
+        el.innerHTML = html.replace('xxxx', count);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     getBrowserAndOSInfo();
     updateScreenSize();
     getIPAddress();
     updateTime();
     setInterval(updateTime, 1000);
+    getVisitCount();
 });
 
 // ========== Console Easter Egg ==========

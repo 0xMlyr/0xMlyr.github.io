@@ -1,0 +1,14 @@
+[Unit]
+Description=Index API Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/index-api
+ExecStart=/usr/bin/python3 /opt/index-api/app.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
