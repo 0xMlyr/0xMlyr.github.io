@@ -1,21 +1,30 @@
 // 延迟加载emoji图片
 (function() {
+    // 监听LCP完成后再加载
+    let lcpDone = false;
+    
+    new PerformanceObserver((list) => {
+        lcpDone = true;
+    }).observe({ entryTypes: ['largest-contentful-paint'] });
+    
     function loadEmojis() {
-        requestIdleCallback(() => {
-            const imgs = document.querySelectorAll('.SleepImg[data-emoji]');
-            imgs.forEach(img => {
-                const emojiUrl = img.getAttribute('data-emoji');
-                if (emojiUrl) {
-                    // 直接替换src，让浏览器异步加载
-                    img.src = emojiUrl;
-                }
+        const imgs = document.querySelectorAll('.SleepImg[data-emoji]');
+        imgs.forEach(img => {
+            const emojiUrl = img.getAttribute('data-emoji');
+            if (emojiUrl) {
+                img.src = emojiUrl;
+            }
+        });
+    }
+    
+    // 等待至少3秒或LCP完成
+    setTimeout(() => {
+        if (lcpDone || document.readyState === 'complete') {
+            loadEmojis();
+        } else {
+            window.addEventListener('load', () => {
+                setTimeout(loadEmojis, 500);
             });
-        }, { timeout: 3000 });
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadEmojis);
-    } else {
-        loadEmojis();
-    }
+        }
+    }, 3000);
 })();
