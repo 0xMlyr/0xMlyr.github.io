@@ -1,8 +1,22 @@
 mlyr.top:4099 {
     reverse_proxy localhost:5099
+    
+    header {
+        Access-Control-Allow-Origin "https://mlyr.top"
+        Access-Control-Allow-Methods "GET, POST, OPTIONS"
+        Access-Control-Allow-Headers "Content-Type"
+        Access-Control-Max-Age "3600"
+    }
+    
+    @options {
+        method OPTIONS
+    }
+    respond @options 204
+    
     tls {
         protocols tls1.2 tls1.3
     }
+    
     log {
         output file /var/log/caddy/index-api.log
     }
