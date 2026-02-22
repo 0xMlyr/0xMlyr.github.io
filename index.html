@@ -35,12 +35,15 @@
     </script>
 
     <!-- Font Awesome -->
+    <link rel="preconnect" href="https://cdn.staticfile.org">
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css"
-        id="fontawesome-css">
+        id="fontawesome-css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css"></noscript>
     <script>
         document.getElementById('fontawesome-css').onerror = function () {
             this.onerror = null;
             this.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+            this.media = 'all';
         };
     </script>
 
@@ -132,11 +135,11 @@
                 <h2 class="major">Service</h2>
 
                 <div style="display: flex; height: auto;">
-                    <img src="https://www.emojiall.com/images/240/microsoft-teams/1f928.png" class="SleepImg default"
-                        loading="lazy" style="transition: opacity 1s ease-in-out;" alt="睡眠表情">
-                    <img src="https://www.emojiall.com/images/240/microsoft-teams/1f60e.png" class="SleepImg alternate"
-                        loading="lazy" style="position: absolute; opacity: 0; transition: opacity 1s ease-in-out;"
-                        alt="太阳镜表情">
+                    <img src="./IMG/loading.svg" class="SleepImg default"
+                        fetchpriority="low" style="transition: opacity 1s ease-in-out;" alt="加载中">
+                    <img src="./IMG/loading.svg" class="SleepImg alternate"
+                        fetchpriority="low" style="position: absolute; opacity: 0; transition: opacity 1s ease-in-out;"
+                        alt="加载中">
 
                     <div id="details" onclick="toggleDetails()">
                         <p style="margin-bottom: 0;">这是我的门户网站，</p>
@@ -416,6 +419,7 @@
     <script src="./JS/browser.min.js"></script>
     <script src="./JS/breakpoints.min.js"></script>
     <script src="./JS/main.js"></script>
+    <script src="./JS/lazy-emoji.js"></script>
     <script src="./JS/cplayer.js"></script>
     <script src="./JS/ip-record.js" defer></script>
     <script src="./JS/debug.js" defer></script>

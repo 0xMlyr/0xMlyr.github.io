@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="52" height="52">
+  <circle cx="26" cy="26" r="20" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="4"/>
+  <circle cx="26" cy="26" r="20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="4" stroke-dasharray="31.4 94.2" stroke-linecap="round">
+    <animateTransform attributeName="transform" type="rotate" from="0 26 26" to="360 26 26" dur="1s" repeatCount="indefinite"/>
+  </circle>
+</svg>

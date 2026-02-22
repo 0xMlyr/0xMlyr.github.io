@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCP性能诊断工具</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #0f0;
+        }
+        .metric {
+            margin: 10px 0;
+            padding: 10px;
+            background: #2a2a2a;
+            border-left: 3px solid #0f0;
+        }
+        .warning { border-left-color: #ff0; color: #ff0; }
+        .error { border-left-color: #f00; color: #f00; }
+        #timeline { margin-top: 20px; }
+        .resource {
+            padding: 5px;
+            margin: 2px 0;
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 LCP 性能诊断报告</h1>
+    <div id="metrics"></div>
+    <div id="timeline"></div>
+
+    <script>
+        // 监控 LCP
+        new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            const lastEntry = entries[entries.length - 1];
+            
+            const div = document.createElement('div');
+            div.className = lastEntry.renderTime > 2500 ? 'metric error' : 'metric';
+            div.innerHTML = `
+                <strong>🎯 LCP 元素:</strong> ${lastEntry.element?.tagName || 'Unknown'}<br>
+                <strong>⏱️ LCP 时间:</strong> ${lastEntry.renderTime.toFixed(2)}ms<br>
+                <strong>📦 资源 URL:</strong> ${lastEntry.url || 'N/A'}<br>
+                <strong>⬇️ 加载时间:</strong> ${lastEntry.loadTime?.toFixed(2) || 'N/A'}ms<br>
+                <strong>🖼️ 渲染延迟:</strong> ${(lastEntry.renderTime - lastEntry.loadTime).toFixed(2)}ms
+            `;
+            document.getElementById('metrics').appendChild(div);
+        }).observe({ entryTypes: ['largest-contentful-paint'] });
+
+        // 监控所有资源加载
+        window.addEventListener('load', () => {
+            const resources = performance.getEntriesByType('resource');
+            const timeline = document.getElementById('timeline');
+            
+            timeline.innerHTML = '<h2>📊 资源加载时间线</h2>';
+            
+            // 按加载时间排序
+            resources.sort((a, b) => b.duration - a.duration);
+            
+            resources.forEach(resource => {
+                const div = document.createElement('div');
+                div.className = 'resource';
+                const duration = resource.duration.toFixed(2);
+                const className = duration > 1000 ? 'error' : duration > 500 ? 'warning' : '';
+                
+                div.innerHTML = `
+                    <span class="${className}">${duration}ms</span> - 
+                    ${resource.initiatorType} - 
+                    ${resource.name.split('/').pop() || resource.name}
+                `;
+                timeline.appendChild(div);
+            });
+
+            // 检查背景图加载
+            const bgCheck = document.createElement('div');
+            bgCheck.className = 'metric warning';
+            bgCheck.innerHTML = `
+                <h3>⚠️ 关键发现</h3>
+                <p>检查是否有来自 api.suyanw.cn 的请求（动态背景图）</p>
+                <p>这可能是导致 LCP 延迟的主要原因</p>
+            `;
+            document.getElementById('metrics').appendChild(bgCheck);
+        });
+    </script>
+</body>
+</html>
