@@ -1,78 +1,140 @@
-# 最终部署步骤（Caddy Docker版）
+# 部署步骤（Caddy Docker版）
 
-## 步骤1：本地推送代码
+## 环境
+- VPS: Debian 12, 1核1G
+- Python3 + Flask (通过apt安装)
+- Caddy (Docker运行)
+- 域名: vps.mlyr.top
+
+---
+
+## 部署步骤
+
+### 1. 上传文件
 ```bash
-cd c:\Users\Ramitd\Documents\GitHub\0xMlyr.github.io
-git add .
-git commit -m "Add visit counter"
-git push
+scp -r opt/index-api root@your-vps-ip:/opt/
 ```
 
-## 步骤2：上传文件到VPS
-```bash
-scp -r "c:\Users\Ramitd\Documents\GitHub\0xMlyr.github.io\opt\index-api" root@your-vps-ip:/opt/
-```
-
-## 步骤3：SSH连接VPS并部署后端
+### 2. 安装依赖
 ```bash
 ssh root@your-vps-ip
-
-# 安装依赖
 apt update
 apt install -y python3-flask python3-flask-cors
+```
 
-# 配置服务
+### 3. 配置服务
+```bash
 cd /opt/index-api
 cp index-api.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable index-api.service
 systemctl start index-api.service
-
-# 验证
 systemctl status index-api.service
-curl http://localhost:5099/api/count
 ```
 
-## 步骤4：更新Caddy配置
+### 4. 测试后端
 ```bash
-# 找到你的Caddy配置文件位置（通常是挂载到Docker的）
-# 例如：/opt/caddy/Caddyfile 或 /etc/caddy/Caddyfile
+curl http://localhost:5099/api/count
+# 预期: {"count":0,"success":true}
+```
 
+### 5. 更新Caddyfile
+```bash
 # 备份
 cp /path/to/your/Caddyfile /path/to/your/Caddyfile.bak
 
-# 覆盖新配置
+# 覆盖（Caddyfile已包含所有现有服务）
 cp /opt/index-api/Caddyfile /path/to/your/Caddyfile
 
-# 重启Caddy Docker
+# 重启Caddy
 docker restart caddy
+docker logs caddy
 ```
 
-## 步骤5：验证
+### 6. 测试API
 ```bash
-# 测试API
 curl https://vps.mlyr.top:4099/api/count
-
-# 查看日志
+curl -X POST https://vps.mlyr.top:4099/api/visit -H "Content-Type: application/json" -d '{"ip":"test"}'
 tail -f /opt/index-api/customer.log
 ```
 
-## 步骤6：浏览器测试
-打开 https://mlyr.top，查看页面底部访问总量。
+### 7. 浏览器测试
+访问 https://mlyr.top，查看页面底部"访问总量"。
 
-## 关键配置说明
+---
 
-### Caddyfile配置
-- 域名：`vps.mlyr.top:4099`
-- 反向代理：`host.docker.internal:5099`（Docker访问宿主机）
-- 已启用CORS
+## 快速部署（推荐）
+```bash
+cd /opt/index-api
+chmod +x deploy.sh
+./deploy.sh
+# 然后手动更新Caddyfile并重启Caddy
+```
 
-### 前端JS
-- API地址：`https://vps.mlyr.top:4099`
+---
 
-### 端口映射
-- 宿主机5099 ← Flask监听
-- 宿主机4099 → Caddy Docker 4099
-- Caddy Docker 4099 → 宿主机5099（通过host.docker.internal）
+## 维护
+
+```bash
+# 服务
+systemctl restart index-api.service
+journalctl -u index-api.service -f
+
+# Caddy
+docker restart caddy
+docker logs caddy -f
+
+# 日志
+tail -f /opt/index-api/customer.log
+cat /opt/index-api/num.txt
+
+# 设置访问量
+echo "1000" > /opt/index-api/num.txt
+systemctl restart index-api.service
+```
+
+---
+
+## 架构
+
+```
+浏览器 (https://mlyr.top)
+    ↓
+vps.mlyr.top:4099 (HTTPS)
+    ↓
+宿主机 4099 → Caddy Docker 4099
+    ↓
+host.docker.internal:5099
+    ↓
+宿主机 Flask (5099)
+    ↓
+num.txt + customer.log
+```
+
+---
+
+## 故障排查
+
+### 后端无响应
+```bash
+systemctl status index-api.service
+journalctl -u index-api.service -xe
+netstat -tlnp | grep 5099
+```
+
+### Caddy无法访问
+```bash
+docker ps | grep caddy
+docker logs caddy
+docker exec caddy ping host.docker.internal
+```
+
+### CORS错误
+```bash
+curl -I https://vps.mlyr.top:4099/api/count
+# 应看到: Access-Control-Allow-Origin: *
+```
+
+---
 
 ## 完成！
