@@ -1,0 +1,56 @@
+(cors) {
+    header {
+        Access-Control-Allow-Origin *
+        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+        Access-Control-Allow-Headers "*"
+        defer
+    }
+}
+
+{
+    email mulingyiru@outlook.com
+}
+
+https://vps.mlyr.top:4140 {
+    reverse_proxy host.docker.internal:5140
+    tls {
+        dns cloudflare {env.CF_API_TOKEN}
+    }
+}
+
+https://vps.mlyr.top:4766 {
+    import cors
+    reverse_proxy host.docker.internal:5766
+    tls {
+        dns cloudflare {env.CF_API_TOKEN}
+    }
+}
+
+https://vps.mlyr.top:4055 {
+    reverse_proxy host.docker.internal:5055
+    tls {
+        dns cloudflare {env.CF_API_TOKEN}
+    }
+}
+
+https://vps.mlyr.top:4244 {
+    reverse_proxy host.docker.internal:5244
+    tls {
+        dns cloudflare {env.CF_API_TOKEN}
+    }
+}
+
+https://vps.mlyr.top:4876 {
+    reverse_proxy host.docker.internal:45876
+    tls {
+        dns cloudflare {env.CF_API_TOKEN}
+    }
+}
+
+https://mlyr.top:4099 {
+    import cors
+    reverse_proxy localhost:5099
+    tls {
+        dns cloudflare {env.CF_API_TOKEN}
+    }
+}
