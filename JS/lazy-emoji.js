@@ -6,14 +6,11 @@
             imgs.forEach(img => {
                 const emojiUrl = img.getAttribute('data-emoji');
                 if (emojiUrl) {
-                    const newImg = new Image();
-                    newImg.onload = () => {
-                        img.src = emojiUrl;
-                    };
-                    newImg.src = emojiUrl;
+                    // 直接替换src，让浏览器异步加载
+                    img.src = emojiUrl;
                 }
             });
-        }, { timeout: 2000 });
+        }, { timeout: 3000 });
     }
 
     if (document.readyState === 'loading') {
