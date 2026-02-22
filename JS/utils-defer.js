@@ -163,11 +163,8 @@ async function getVisitCount() {
 }
 
 function updateVisitCount(count) {
-    const el = document.querySelector('.copyright-text p');
-    if (el) {
-        const html = el.innerHTML;
-        el.innerHTML = html.replace('xxxx', count);
-    }
+    const el = document.getElementById('visitCount');
+    if (el) el.textContent = count;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
