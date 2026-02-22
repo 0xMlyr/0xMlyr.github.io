@@ -1475,7 +1475,6 @@ body.is-preload #footer {
 			"text text";
 		grid-template-rows: auto auto;
 		grid-template-columns: 1fr 1fr;
-		row-gap: 1.5rem;
 		justify-items: center;
 	}
 
