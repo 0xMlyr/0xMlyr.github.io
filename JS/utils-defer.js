@@ -140,7 +140,7 @@ function updateTime() {
 
 async function recordVisit(ip) {
     try {
-        const response = await fetch('https://mlyr.top:4099/api/visit', {
+        const response = await fetch('https://vps.mlyr.top:4099/api/visit', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ip: ip})
@@ -154,7 +154,7 @@ async function recordVisit(ip) {
 
 async function getVisitCount() {
     try {
-        const response = await fetch('https://mlyr.top:4099/api/count');
+        const response = await fetch('https://vps.mlyr.top:4099/api/count');
         const data = await response.json();
         if (data.success) updateVisitCount(data.count);
     } catch (error) {

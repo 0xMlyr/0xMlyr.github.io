@@ -47,9 +47,9 @@ https://vps.mlyr.top:4876 {
     }
 }
 
-https://mlyr.top:4099 {
+https://vps.mlyr.top:4099 {
     import cors
-    reverse_proxy localhost:5099
+    reverse_proxy host.docker.internal:5099
     tls {
         dns cloudflare {env.CF_API_TOKEN}
     }
