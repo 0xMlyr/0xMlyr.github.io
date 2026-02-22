@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MLYR's WebSite</title>
+    <link>https://www.mlyr.top</link>
+    <description>慕灵一儒(MLYR)的个人门户网站 - 风雨暗千家·诗酒趁年华。提供博客、网盘、导航等服务。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 22 Feb 2025 10:47:32 +0800</lastBuildDate>
+    <atom:link href="https://www.mlyr.top/rss.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://www.mlyr.top/IMG/head.webp</url>
+      <title>MLYR's WebSite</title>
+      <link>https://www.mlyr.top</link>
+    </image>
+
+    <item>
+      <title>网站介绍</title>
+      <link>https://www.mlyr.top/#intro</link>
+      <description>不忘初心 • 一生浪漫 - MLYR的个人门户网站</description>
+      <pubDate>Sat, 22 Feb 2025 10:47:32 +0800</pubDate>
+      <guid>https://www.mlyr.top/#intro</guid>
+    </item>
+
+    <item>
+      <title>服务项目</title>
+      <link>https://www.mlyr.top/#work</link>
+      <description>慕灵者说、自用网盘等服务项目介绍</description>
+      <pubDate>Sat, 22 Feb 2025 10:47:32 +0800</pubDate>
+      <guid>https://www.mlyr.top/#work</guid>
+    </item>
+
+    <item>
+      <title>慕灵者说</title>
+      <link>https://vps.mlyr.top:4140</link>
+      <description>文字是颗粒状的照片 - 个人博客服务</description>
+      <pubDate>Sat, 22 Feb 2025 10:47:32 +0800</pubDate>
+      <guid>https://vps.mlyr.top:4140</guid>
+    </item>
+
+    <item>
+      <title>自用网盘</title>
+      <link>https://vps.mlyr.top:4244</link>
+      <description>由alist驱动的共享网盘服务</description>
+      <pubDate>Sat, 22 Feb 2025 10:47:32 +0800</pubDate>
+      <guid>https://vps.mlyr.top:4244</guid>
+    </item>
+
+    <item>
+      <title>联系方式</title>
+      <link>https://www.mlyr.top/#link</link>
+      <description>E-mail: support@mlyr.com | TG: mulingyiru</description>
+      <pubDate>Sat, 22 Feb 2025 10:47:32 +0800</pubDate>
+      <guid>https://www.mlyr.top/#link</guid>
+    </item>
+
+  </channel>
+</rss>
