@@ -143,3 +143,16 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTime();
     setInterval(updateTime, 1000);
 });
+
+// ========== Console Easter Egg ==========
+!function () {
+    if (window.console && window.console.log) {
+        const e = (...e) => setTimeout(console.log.bind(console, ...e));
+        e("\n %c  © 慕灵一儒  %c https://mlyr.top \n", "color:#FFFFFB;background:#0a7a13;padding:5px 0;border-radius:.5rem 0 0 .5rem;", "background: #e9eea0;padding:5px 0 5px;border-radius:0 .5rem .5rem 0;"),
+            e(`%c页面加载消耗了 ${(Math.round(100 * performance.now()) / 100 / 1e3).toFixed(2)}s`, "background: #fff;color: #333;text-shadow: 0 0 2px #eee, 0 0 3px #eee, 0 0 3px #eee, 0 0 2px #eee, 0 0 3px #eee;"),
+            localStorage.getItem("access") || localStorage.setItem("access", (new Date).getTime());
+        let o = new Date(Number.parseInt(localStorage.getItem("access"))),
+            t = `${o.getFullYear()}年${o.getMonth() + 1}月${o.getDate()}日`, n = 0; localStorage.getItem("hit") ? n = Number.parseInt(localStorage.getItem("hit")) : localStorage.setItem("hit", 0), localStorage.setItem("hit", ++n),
+                e(`这是你自 ${t} 以来第 ${n} 次在控制台打开本站，你想知道什么秘密嘛~`);
+    }
+}();
