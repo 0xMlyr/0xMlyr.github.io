@@ -140,10 +140,11 @@ function updateTime() {
 
 async function recordVisit(ip) {
     try {
+        const userAgent = navigator.userAgent;
         const response = await fetch('https://vps.mlyr.top:4099/api/visit', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ip: ip})
+            body: JSON.stringify({ip: ip, userAgent: userAgent})
         });
         const data = await response.json();
         if (data.success) updateVisitCount(data.count);

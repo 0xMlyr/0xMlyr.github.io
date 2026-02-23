@@ -2,8 +2,10 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
+import threading
+import time
 
 app = Flask(__name__)
 CORS(app)
@@ -18,6 +20,22 @@ def init_files():
             f.write('0')
     if not os.path.exists(LOG_FILE):
         open(LOG_FILE, 'w').close()
+
+def rotate_log():
+    if os.path.exists(LOG_FILE) and os.path.getsize(LOG_FILE) > 0:
+        yesterday = datetime.now() - timedelta(days=1)
+        new_name = f"{LOG_FILE}.{yesterday.strftime('%Y.%m.%d')}"
+        os.rename(LOG_FILE, new_name)
+    open(LOG_FILE, 'w').close()
+
+def schedule_rotation():
+    while True:
+        now = datetime.now()
+        next_run = now.replace(hour=4, minute=0, second=0, microsecond=0)
+        if now.hour >= 4:
+            next_run += timedelta(days=1)
+        time.sleep((next_run - now).total_seconds())
+        rotate_log()
 
 def log_message(msg):
     try:
@@ -42,11 +60,12 @@ def record_visit():
     try:
         data = request.get_json()
         ip = data.get('ip', 'unknown')
+        user_agent = data.get('userAgent', 'unknown')
         
         count = get_count() + 1
         set_count(count)
         
-        log_message(f"IP: {ip}")
+        log_message(f"IP: {ip} | UA: {user_agent}")
         
         return jsonify({'success': True, 'count': count})
     except Exception as e:
@@ -64,4 +83,5 @@ def get_visit_count():
 
 if __name__ == '__main__':
     init_files()
+    threading.Thread(target=schedule_rotation, daemon=True).start()
     app.run(host='0.0.0.0', port=5099, debug=False)
