@@ -58,9 +58,9 @@ def set_count(count):
 @app.route('/api/visit', methods=['POST'])
 def record_visit():
     try:
-        data = request.get_json()
+        data = request.get_json() or {}
         ip = data.get('ip', 'unknown')
-        user_agent = data.get('userAgent', 'unknown')
+        user_agent = data.get('userAgent') or request.headers.get('User-Agent', 'unknown')
         
         count = get_count() + 1
         set_count(count)

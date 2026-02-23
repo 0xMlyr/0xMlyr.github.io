@@ -140,13 +140,15 @@ function updateTime() {
 
 async function recordVisit(ip) {
     try {
-        const userAgent = navigator.userAgent;
+        const userAgent = navigator.userAgent || 'unknown';
+        console.log('Sending visit record:', {ip, userAgent});
         const response = await fetch('https://vps.mlyr.top:4099/api/visit', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ip: ip, userAgent: userAgent})
         });
         const data = await response.json();
+        console.log('Visit record response:', data);
         if (data.success) updateVisitCount(data.count);
     } catch (error) {
         console.error('记录访问失败:', error);
