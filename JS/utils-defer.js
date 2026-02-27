@@ -142,7 +142,7 @@ async function recordVisit(ip) {
     try {
         const userAgent = navigator.userAgent || 'unknown';
         console.log('Sending visit record:', {ip, userAgent});
-        const response = await fetch('https://vps.mlyr.top:4099/api/visit', {
+        const response = await fetch('https://index2.api.mlyr.top/api/visit', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ip: ip, userAgent: userAgent})
@@ -157,7 +157,7 @@ async function recordVisit(ip) {
 
 async function getVisitCount() {
     try {
-        const response = await fetch('https://vps.mlyr.top:4099/api/count');
+        const response = await fetch('https://index2.api.mlyr.top/api/count');
         const data = await response.json();
         if (data.success) updateVisitCount(data.count);
     } catch (error) {
