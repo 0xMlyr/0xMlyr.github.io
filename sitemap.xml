@@ -7,25 +7,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.mlyr.top/#intro</loc>
-    <lastmod>2025-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.mlyr.top/#work</loc>
-    <lastmod>2025-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.mlyr.top/#link</loc>
-    <lastmod>2025-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.mlyr.top/#about</loc>
     <lastmod>2025-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
