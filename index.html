@@ -98,7 +98,8 @@
                                 class="fa fa-magic"></i>慕灵者说</a></li>
                     <li><a href="https://alist.api.mlyr.top" target="_blank" rel="noopener noreferrer" title="自用网盘"><i
                                 class="fa fa-rocket"></i>自用网盘</a></li>
-                    <li><a href="#biotrans" title="网页翻译"><i class="fa fa-language"></i>网页翻译</a></li>
+                    <li><a href="https://biotrans.mlyr.top" target="_blank" rel="noopener noreferrer" title="网页翻译"><i
+                                class="fa fa-language"></i>网页翻译</a></li>
                     <li><a href="#error" title="暂未开放"><i class="fa fa-puzzle-piece"></i>暂未开放</a></li>
                     <li><a href="#error" title="暂未开放"><i class="fa fa-puzzle-piece"></i>暂未开放</a></li>
                 </ul>
@@ -156,6 +157,10 @@
                     <div class="serviceBox">
                         <p><strong>自用网盘：</strong>
                             由alist驱动的聚合网盘。</p>
+                    </div>
+                    <div class="serviceBox">
+                        <p><strong>网页翻译：</strong>
+                            由cf workers驱动的网页术语翻译工具。</p>
                     </div>
 
                     <p>希望对你有所帮助 (◦˙▽˙◦)</p>
@@ -243,48 +248,6 @@
                 <p style="font-size: 0.6rem; opacity: 0.3; margin-bottom: 2rem;">本站可能会记录访客档案以优化SEO,可在控制台查看详细信息。<br>
                     <span id="userAgentInfo"></span>
                 </p>
-            </article>
-
-            <article id="biotrans">
-                <h2 class="major">Bio-Trans</h2>
-
-                <p style="opacity:0.5; margin:0 0 0.6rem;">🚧 施工中...</p>
-
-                <p style="opacity:0.75; line-height:1.8; margin:0 0 1.2rem;">
-                    这是专为昆虫形态学研究打造的网页术语翻译器，基于 Cloudflare Workers 边缘计算部署，代理诸如 ZooKeys 等目标网页并实现 HTMLRewriter
-                    流式注入，为英文专业术语提供基于 KV 键值匹配的中文释义与悬停说明。</p>
-
-                <div style="display:flex; align-items:center; gap:8px; margin:0 0 0.6rem; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:6px;">
-                    <input type="text" id="biotrans-input" placeholder="https://"
-                        style="flex:1; background:transparent; border:none; color:#fff; font:inherit; font-size:0.9rem; padding:4px 0; outline:none;">
-                    <button id="biotrans-submit"
-                        style="background:transparent; border:none; color:rgba(255,255,255,0.5); font:inherit; font-size:0.85rem; cursor:pointer; padding:0; white-space:nowrap;">跳转 →</button>
-                </div>
-
-                <p style="font-size:0.8rem; opacity:0.4; margin:0 0 0.6rem;"><a
-                        href="https://github.com/0xMlyr/BioTransWorkers" target="_blank"
-                        rel="noopener noreferrer">Glossary</a></p>
-                <p style="font-size:0.8rem; opacity:0.4; margin:0 0 2rem;"><a
-                        href="https://github.com/0xMlyr/BioTransWorkers" target="_blank"
-                        rel="noopener noreferrer">Github: 0xMlyr/BioTransWorkers</a></p>
-
-                <script>
-                    (function () {
-                        function submitBiotrans() {
-                            var url = document.getElementById('biotrans-input').value.trim();
-                            if (url) {
-                                window.open('https://biotrans.mlyr.top/?url=' + encodeURIComponent(url), '_blank');
-                            } else {
-                                alert('请输入目标 URL');
-                            }
-                        }
-                        document.getElementById('biotrans-submit').addEventListener('click', submitBiotrans);
-                        document.getElementById('biotrans-input').addEventListener('keydown', function (e) {
-                            if (e.key === 'Enter') submitBiotrans();
-                        });
-                    })();
-                </script>
-
             </article>
 
             <article id="error">
