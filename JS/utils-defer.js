@@ -198,15 +198,26 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el) el.textContent = timeStr;
     }
 
+    function safeSetStorage(key, value) {
+        try {
+            localStorage.setItem(key, value);
+        } catch (e) {
+            console.warn('localStorage unavailable:', e.message);
+        }
+    }
+
     function fetchFromGitHub() {
         fetch(`https://api.github.com/repos/${REPO}/commits?per_page=1`)
-            .then(r => r.json())
+            .then(r => {
+                if (!r.ok) throw new Error(`HTTP ${r.status}`);
+                return r.json();
+            })
             .then(data => {
                 if (data && data[0] && data[0].commit && data[0].commit.committer) {
                     const time = data[0].commit.committer.date;
                     const formatted = formatDate(time);
-                    localStorage.setItem(CACHE_KEY, formatted);
-                    localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
+                    safeSetStorage(CACHE_KEY, formatted);
+                    safeSetStorage(CACHE_TIME_KEY, Date.now().toString());
                     updateDisplay(formatted);
                 }
             })
@@ -215,8 +226,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    const cached = localStorage.getItem(CACHE_KEY);
-    const cachedAt = parseInt(localStorage.getItem(CACHE_TIME_KEY) || '0');
+    let cached = null, cachedAt = 0;
+    try {
+        cached = localStorage.getItem(CACHE_KEY);
+        cachedAt = parseInt(localStorage.getItem(CACHE_TIME_KEY) || '0');
+    } catch (e) {
+        console.warn('localStorage read failed:', e.message);
+    }
     const now = Date.now();
 
     if (cached && (now - cachedAt) < TTL) {
@@ -230,11 +246,17 @@ document.addEventListener('DOMContentLoaded', () => {
 !function () {
     if (window.console && window.console.log) {
         const e = (...e) => setTimeout(console.log.bind(console, ...e));
-        e("\n %c  © 慕灵一儒  %c https://mlyr.top \n", "color:#FFFFFB;background:#0a7a13;padding:5px 0;border-radius:.5rem 0 0 .5rem;", "background: #e9eea0;padding:5px 0 5px;border-radius:0 .5rem .5rem 0;"),
-            e(`%c页面加载消耗了 ${(Math.round(100 * performance.now()) / 100 / 1e3).toFixed(2)}s`, "background: #fff;color: #333;text-shadow: 0 0 2px #eee, 0 0 3px #eee, 0 0 3px #eee, 0 0 2px #eee, 0 0 3px #eee;"),
+        try {
             localStorage.getItem("access") || localStorage.setItem("access", (new Date).getTime());
-        let o = new Date(Number.parseInt(localStorage.getItem("access"))),
-            t = `${o.getFullYear()}年${o.getMonth() + 1}月${o.getDate()}日`, n = 0; localStorage.getItem("hit") ? n = Number.parseInt(localStorage.getItem("hit")) : localStorage.setItem("hit", 0), localStorage.setItem("hit", ++n),
+            let o = new Date(Number.parseInt(localStorage.getItem("access"))),
+                t = `${o.getFullYear()}年${o.getMonth() + 1}月${o.getDate()}日`, n = 0; localStorage.getItem("hit") ? n = Number.parseInt(localStorage.getItem("hit")) : localStorage.setItem("hit", 0), localStorage.setItem("hit", ++n);
+            e("\n %c  © 慕灵一儒  %c https://mlyr.top \n", "color:#FFFFFB;background:#0a7a13;padding:5px 0;border-radius:.5rem 0 0 .5rem;", "background: #e9eea0;padding:5px 0 5px;border-radius:0 .5rem .5rem 0;"),
+                e(`%c页面加载消耗了 ${(Math.round(100 * performance.now()) / 100 / 1e3).toFixed(2)}s`, "background: #fff;color: #333;text-shadow: 0 0 2px #eee, 0 0 3px #eee, 0 0 3px #eee, 0 0 2px #eee, 0 0 3px #eee;"),
                 e(`这是你自 ${t} 以来第 ${n} 次在控制台打开本站，你想知道什么秘密嘛~`);
+        } catch (err) {
+            e("\n %c  © 慕灵一儒  %c https://mlyr.top \n", "color:#FFFFFB;background:#0a7a13;padding:5px 0;border-radius:.5rem 0 0 .5rem;", "background: #e9eea0;padding:5px 0 5px;border-radius:0 .5rem .5rem 0;"),
+                e(`%c页面加载消耗了 ${(Math.round(100 * performance.now()) / 100 / 1e3).toFixed(2)}s`, "background: #fff;color: #333;text-shadow: 0 0 2px #eee, 0 0 3px #eee, 0 0 3px #eee, 0 0 2px #eee, 0 0 3px #eee;"),
+                e('这是你首次在控制台打开本站（隐私模式或无存储权限），你想知道什么秘密嘛~');
+        }
     }
 }();

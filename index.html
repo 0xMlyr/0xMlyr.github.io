@@ -71,7 +71,7 @@
             <div class="content">
                 <div class="inner">
                     <h2>风雨暗千家 · 诗酒趁年华</h2>
-                    <h3>慕 灵 一 儒</h3>
+                    <p style="font-size: 1.1rem;">慕 灵 一 儒</p>
                 </div>
             </div>
 
@@ -87,7 +87,7 @@
             <div class="content">
                 <div class="inner">
                     <h2>MY.Service.😉😎🤯</h2>
-                    <p>我 的 服 务 项<br> </p>
+                    <p>我 的 服 务 项</p>
                 </div>
             </div>
 
@@ -219,17 +219,19 @@
 
                 <ul class="icons" style="margin-top: 1.5rem;">
                     <li><a href="javascript:void(0)" class="icon fa fa-envelope" onclick="copyEmail(this);"></a></li>
-                    <li><a href="https://t.me/mulingyiru" target="_blank" rel="noopener noreferrer" class="icon fa fa-paper-plane"></a></li>
-                    <li><a href="https://github.com/0xMlyr" target="_blank" rel="noopener noreferrer" class="icon fa fa-github"></a></li>
+                    <li><a href="https://t.me/mulingyiru" target="_blank" rel="noopener noreferrer"
+                            class="icon fa fa-paper-plane"></a></li>
+                    <li><a href="https://github.com/0xMlyr" target="_blank" rel="noopener noreferrer"
+                            class="icon fa fa-github"></a></li>
                 </ul>
 
                 <script>
-                    window.copyEmail = function(el) {
+                    window.copyEmail = function (el) {
                         var email = atob('c3VwcG9ydEBtbHlyLmNvbQ==');
                         if (navigator.clipboard && navigator.clipboard.writeText) {
-                            navigator.clipboard.writeText(email).then(function() {
+                            navigator.clipboard.writeText(email).then(function () {
                                 if (window.showToast) showToast('已复制到剪贴板');
-                            }).catch(function() {
+                            }).catch(function () {
                                 fallbackCopy(email);
                             });
                         } else {
@@ -274,7 +276,7 @@
                     <p>IP归属地：<span id="ipLocation"></span></p>
                 </div>
 
-                <p style="font-size: 0.6rem; opacity: 0.3; margin-bottom: 2rem;">本站可能会记录访客档案以优化SEO,可在控制台查看详细信息。<br>
+                <p style="font-size: 0.6rem; opacity: 0.3; margin-bottom: 2rem; margin-top: 1rem;">本站可能会记录访客档案以优化SEO,可在控制台查看详细信息。<br>
                     <span id="userAgentInfo"></span>
                 </p>
             </article>
@@ -295,7 +297,8 @@
 
                 <div class="ServiceBox">
                     <h3>status 🤖</h3>
-                    <p><a href="https://t.me/mlyrvps_bot" target="_blank" rel="noopener noreferrer">Telegram status BOT</a></p>
+                    <p><a href="https://t.me/mlyrvps_bot" target="_blank" rel="noopener noreferrer">Telegram status
+                            BOT</a></p>
                 </div>
 
                 <div class="ServiceBox">
@@ -309,7 +312,7 @@
                 <div class="ServiceBox">
                     <h3>LAN port-reload</h3>
                     <input type="text" class="debugInputBox" id="debug-input" placeholder=">">
-                    <button id="debug-submit" class="debugInputButton">点击跳转</button>
+                    <button id="debug-submit" class="debugInputButton">GO</button>
                 </div>
 
             </article>
@@ -326,7 +329,8 @@
                             rel="noopener noreferrer">Sitemap</a><br>
                         <a href="https://icp.gov.moe/?keyword=20261017" target="_blank"
                             rel="noopener noreferrer">萌ICP备20261017号</a><br>
-                        <a style="text-decoration:none;">最后更新于: <span id="last-updated">2026.04.20.01.56.XX</span></a><br>
+                        <a style="text-decoration:none;">最后更新于: <span
+                                id="last-updated">2026.04.20.01.56.00</span></a><br>
                         &copy; Copyright by <strong><a href="https://www.mlyr.top" style="text-decoration:none;"
                                 target="_blank" rel="noopener noreferrer">MLYR</a></strong> 2022-2026
                     </p>
