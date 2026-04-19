@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const port = input.value;
         if (port) {
             window.open(`http://debug.mlyr.top:${port}`, '_blank');
+        } else if (window.showToast) {
+            showToast('啥也没输你想干啥？');
         } else {
             alert('啥也没输你想干啥？');
         }

@@ -220,3 +220,27 @@
 			});
 
 })();
+
+// ===== Global Toast Component =====
+(function() {
+    var toast = document.createElement('div');
+    toast.id = 'global-toast';
+    toast.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,0.8);color:#fff;padding:12px 24px;border-radius:4px;font-size:14px;z-index:99999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap;';
+    
+    if (document.body) {
+        document.body.appendChild(toast);
+    } else {
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.appendChild(toast);
+        });
+    }
+
+    window.showToast = function(msg) {
+        if (!document.body.contains(toast)) {
+            document.body.appendChild(toast);
+        }
+        toast.textContent = msg;
+        toast.style.opacity = '1';
+        setTimeout(function() { toast.style.opacity = '0'; }, 2000);
+    };
+})();

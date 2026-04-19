@@ -21,8 +21,6 @@
     <link rel="preload" href="./CSS/main.css" as="style">
     <link rel="preload" href="./JS/main.js" as="script">
 
-    <link rel="stylesheet" href="./CSS/main.css">
-
     <!-- SEO Json -->
     <script type="application/ld+json">
     {
@@ -40,6 +38,7 @@
     }
     </script>
 
+    <link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="./CSS/font-awesome.min.css">
 
     <noscript>
@@ -96,12 +95,11 @@
                 <ul>
                     <li><a href="https://blog.api.mlyr.top" target="_blank" rel="noopener noreferrer" title="慕灵者说"><i
                                 class="fa fa-magic"></i>慕灵者说</a></li>
-                    <li><a href="https://alist.api.mlyr.top" target="_blank" rel="noopener noreferrer" title="自用网盘"><i
-                                class="fa fa-rocket"></i>自用网盘</a></li>
                     <li><a href="https://biotrans.mlyr.top" target="_blank" rel="noopener noreferrer" title="网页翻译"><i
                                 class="fa fa-language"></i>网页翻译</a></li>
                     <li><a href="#error" title="暂未开放"><i class="fa fa-puzzle-piece"></i>暂未开放</a></li>
                     <li><a href="#error" title="暂未开放"><i class="fa fa-puzzle-piece"></i>暂未开放</a></li>
+                    <li><a href="#debug" title="DEBUG"><i class="fa fa-bug"></i>DEBUG</a></li>
                 </ul>
             </nav>
 
@@ -150,19 +148,16 @@
 
 
                     <h3>现已开放👀</h3>
-                    <div class="serviceBox">
+                    <div class="ServiceBox">
                         <p><strong>慕灵者说：</strong>
                             文字是颗粒状的照片。</p>
                     </div>
-                    <div class="serviceBox">
-                        <p><strong>自用网盘：</strong>
-                            由alist驱动的聚合网盘。</p>
-                    </div>
 
                     <h3>施工中...</h3>
-                    <div class="serviceBox">
+                    <div class="ServiceBox">
                         <p><strong>网页翻译：</strong>
-                            专为昆虫形态学研究打造的网页术语翻译器，基于 Cloudflare Workers 边缘计算部署，代理诸如 ZooKeys 等目标网页并实现 HTMLRewriter 流式注入，为英文专业术语提供基于 KV 键值匹配的中文释义与悬停说明。</p>
+                            专为昆虫形态学研究打造的网页术语翻译器，基于 Cloudflare Workers 边缘计算部署，代理诸如 ZooKeys 等目标网页并实现 HTMLRewriter
+                            流式注入，为英文专业术语提供基于 KV 键值匹配的中文释义与悬停说明。</p>
                     </div>
 
                     <p>希望对你有所帮助 (◦˙▽˙◦)</p>
@@ -219,12 +214,44 @@
                 <h2 class="major">Contact</h2>
 
                 <img src="./IMG/gpt-4-motif.svg" alt="GPT-4图标">
-                <p style="margin-top: 20px; margin-bottom: 1rem"><strong>E-mail:</strong> support@mlyr.com<br>
-                    <strong>TG:</strong><a href="https://t.me/mulingyiru" target="_blank" rel="noopener noreferrer">
-                        @mulingyiru</a>
-                </p>
 
-                <p>希望我们不会为自己的过去后悔......</p>
+                <ul class="icons" style="margin-top: 1.5rem;">
+                    <li><a href="javascript:void(0)" class="icon fa fa-envelope" onclick="copyEmail(this);"></a></li>
+                    <li><a href="https://t.me/mulingyiru" target="_blank" rel="noopener noreferrer" class="icon fa fa-paper-plane"></a></li>
+                    <li><a href="https://github.com/0xMlyr" target="_blank" rel="noopener noreferrer" class="icon fa fa-github"></a></li>
+                </ul>
+
+                <p style="margin-top: 0.5rem;">希望我们不会为自己的过去后悔......</p>
+
+                <script>
+                    window.copyEmail = function(el) {
+                        var email = atob('c3VwcG9ydEBtbHlyLmNvbQ==');
+                        if (navigator.clipboard && navigator.clipboard.writeText) {
+                            navigator.clipboard.writeText(email).then(function() {
+                                if (window.showToast) showToast('已复制到剪贴板');
+                            }).catch(function() {
+                                fallbackCopy(email);
+                            });
+                        } else {
+                            fallbackCopy(email);
+                        }
+                    };
+
+                    function fallbackCopy(text) {
+                        var textarea = document.createElement('textarea');
+                        textarea.value = text;
+                        textarea.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        try {
+                            document.execCommand('copy');
+                            if (window.showToast) showToast('已复制到剪贴板');
+                        } catch (err) {
+                            if (window.showToast) showToast('复制失败，请手动复制');
+                        }
+                        document.body.removeChild(textarea);
+                    }
+                </script>
 
                 <div style="text-align: right;" class="nextinfo">
                     <a href="#about">访客档案</a>
@@ -238,7 +265,7 @@
                 <!-- IP签名 -->
                 <p style="margin-bottom: 15px;"><strong>欢迎访问本站，以下是访客档案：</strong></p>
 
-                <div id="infoContainer" class="infoContainer">
+                <div id="infoContainer" class="ServiceBox">
                     <p>当前时间：<span id="sysTime"></span></p>
                     <p>操作系统：<span id="osInfo"></span></p>
                     <p>浏览器：<span id="browserInfo"></span></p>
@@ -254,8 +281,7 @@
 
             <article id="error">
                 <h2 class="major">ERROR</h2>
-                <p>暂未开放</p>
-                <div>
+                <div class="ServiceBox">
                     <p>Sorry, I'm worn out...<br>
                         Wait for confessing my sin,<br>
                         concealing them all.<br>
@@ -267,13 +293,21 @@
             <article id="debug">
                 <h2 class="major">DEBUG</h2>
 
-                <div class="debug-box">
+                <div class="ServiceBox">
                     <h3>status bot</h3>
-                    <p>Telegram VPS status BOT 🤖</p>
-                    <p><a href="https://t.me/mlyrvps_bot" target="_blank" rel="noopener noreferrer">点击关注</a></p>
+                    <p><a href="https://t.me/mlyrvps_bot" target="_blank" rel="noopener noreferrer">Telegram status BOT
+                            🤖</a></p>
                 </div>
 
-                <div class="debug-box">
+                <div class="ServiceBox">
+                    <h3>File Manager</h3>
+                    <p><a href="https://alist.api.mlyr.top/" target="_blank" rel="noopener noreferrer">Alist Drive</a>
+                    </p>
+                    <p><a href="https://file.api.mlyr.top/" target="_blank" rel="noopener noreferrer">FileBrowser
+                            Upload</a></p>
+                </div>
+
+                <div class="ServiceBox">
                     <h3>LAN port-reload</h3>
                     <input type="text" class="debugInputBox" id="debug-input" placeholder=">">
                     <button id="debug-submit" class="debugInputButton">点击跳转</button>
@@ -286,17 +320,6 @@
 
         <footer id="footer">
             <div class="copyright">
-                <div class="caution">
-                    <a href="https://github.com/0xMlyr" target="_blank" rel="noopener noreferrer">
-                        <div class="image-container">
-                            <img src="./IMG/github-mark-white.svg" alt="GitHub Logo">
-                        </div>
-                    </a>
-                    <p style="margin-bottom: 0px; margin-top: 2px; letter-spacing: 0.1rem;">
-                        Github Page
-                    </p>
-                </div>
-
                 <div class="copyright-text">
                     <p>Views: <span id="visitCount">加载中...</span> | <a href="https://www.mlyr.top/rss.xml"
                             target="_blank" rel="noopener noreferrer">Rss</a> | <a
@@ -305,15 +328,9 @@
                         <a href="https://icp.gov.moe/?keyword=20261017" target="_blank"
                             rel="noopener noreferrer">萌ICP备20261017号</a><br>
                         <a style="text-decoration:none;">最后更新于: 2026.02.22.10.47.32</a><br>
-                        © Copyright by <strong><a href="https://www.mlyr.top" style="text-decoration:none;"
+                        &copy; Copyright by <strong><a href="https://www.mlyr.top" style="text-decoration:none;"
                                 target="_blank" rel="noopener noreferrer">MLYR</a></strong> 2022-2026
                     </p>
-                </div>
-
-                <div class="copyname">
-                    <a href="#debug">
-                        <img src="./IMG/keyboard_cat.webp" class="seal" loading="lazy" alt="Debug Seal">
-                    </a>
                 </div>
             </div>
 
