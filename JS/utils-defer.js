@@ -181,6 +181,51 @@ document.addEventListener('DOMContentLoaded', () => {
     getVisitCount();
 });
 
+// ========== Last Updated (GitHub API with 1h cache) ==========
+(function() {
+    const CACHE_KEY = 'gh_last_commit';
+    const CACHE_TIME_KEY = 'gh_last_commit_cached_at';
+    const TTL = 3600000; // 1 hour
+    const REPO = '0xMlyr/0xMlyr.github.io';
+
+    function formatDate(dateStr) {
+        const d = new Date(dateStr);
+        return `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,'0')}.${String(d.getDate()).padStart(2,'0')}.${String(d.getHours()).padStart(2,'0')}.${String(d.getMinutes()).padStart(2,'0')}.${String(d.getSeconds()).padStart(2,'0')}`;
+    }
+
+    function updateDisplay(timeStr) {
+        const el = document.getElementById('last-updated');
+        if (el) el.textContent = timeStr;
+    }
+
+    function fetchFromGitHub() {
+        fetch(`https://api.github.com/repos/${REPO}/commits?per_page=1`)
+            .then(r => r.json())
+            .then(data => {
+                if (data && data[0] && data[0].commit && data[0].commit.committer) {
+                    const time = data[0].commit.committer.date;
+                    const formatted = formatDate(time);
+                    localStorage.setItem(CACHE_KEY, formatted);
+                    localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
+                    updateDisplay(formatted);
+                }
+            })
+            .catch((error) => {
+                console.error('GitHub commit fetch failed:', error);
+            });
+    }
+
+    const cached = localStorage.getItem(CACHE_KEY);
+    const cachedAt = parseInt(localStorage.getItem(CACHE_TIME_KEY) || '0');
+    const now = Date.now();
+
+    if (cached && (now - cachedAt) < TTL) {
+        updateDisplay(cached);
+    } else {
+        fetchFromGitHub();
+    }
+})();
+
 // ========== Console Easter Egg ==========
 !function () {
     if (window.console && window.console.log) {
