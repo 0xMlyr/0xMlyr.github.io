@@ -97,8 +97,8 @@
                                 class="fa fa-magic"></i>慕灵者说</a></li>
                     <li><a href="https://biotrans.mlyr.top" target="_blank" rel="noopener noreferrer" title="网页翻译"><i
                                 class="fa fa-language"></i>网页翻译</a></li>
-                    <li><a href="#error" title="暂未开放"><i class="fa fa-puzzle-piece"></i>暂未开放</a></li>
-                    <li><a href="#error" title="暂未开放"><i class="fa fa-puzzle-piece"></i>暂未开放</a></li>
+                    <li><a title="暂未开放"><i class="fa fa-puzzle-piece"></i>暂未开放</a></li>
+                    <li><a title="暂未开放"><i class="fa fa-puzzle-piece"></i>暂未开放</a></li>
                     <li><a href="#debug" title="DEBUG"><i class="fa fa-bug"></i>DEBUG</a></li>
                 </ul>
             </nav>
@@ -215,7 +215,7 @@
 
                 <img src="./IMG/gpt-4-motif.svg" alt="GPT-4图标">
 
-                <p style="margin-top: 0.5rem;">希望我们不会为自己的过去后悔......</p>
+                <p style="margin-top: 0.5rem; margin-bottom: 0rem;">希望我们不会为自己的过去后悔......</p>
 
                 <ul class="icons" style="margin-top: 1.5rem;">
                     <li><a href="javascript:void(0)" class="icon fa fa-envelope" onclick="copyEmail(this);"></a></li>
@@ -226,33 +226,12 @@
                 </ul>
 
                 <script>
-                    window.copyEmail = function (el) {
-                        var email = atob('c3VwcG9ydEBtbHlyLmNvbQ==');
-                        if (navigator.clipboard && navigator.clipboard.writeText) {
-                            navigator.clipboard.writeText(email).then(function () {
-                                if (window.showToast) showToast('已复制到剪贴板');
-                            }).catch(function () {
-                                fallbackCopy(email);
-                            });
-                        } else {
-                            fallbackCopy(email);
-                        }
+                    window.copyEmail = function () {
+                        const email = atob('c3VwcG9ydEBtbHlyLmNvbQ==');
+                        navigator.clipboard.writeText(email)
+                            .then(() => { if (window.showToast) showToast('已复制到剪贴板'); })
+                            .catch(() => { if (window.showToast) showToast('复制失败'); });
                     };
-
-                    function fallbackCopy(text) {
-                        var textarea = document.createElement('textarea');
-                        textarea.value = text;
-                        textarea.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
-                        document.body.appendChild(textarea);
-                        textarea.select();
-                        try {
-                            document.execCommand('copy');
-                            if (window.showToast) showToast('已复制到剪贴板');
-                        } catch (err) {
-                            if (window.showToast) showToast('复制失败，请手动复制');
-                        }
-                        document.body.removeChild(textarea);
-                    }
                 </script>
 
                 <div style="text-align: right;" class="nextinfo">
@@ -281,19 +260,17 @@
                 </p>
             </article>
 
-            <article id="error">
-                <h2 class="major">ERROR</h2>
+            <article id="debug">
+                <h2 class="major">DEBUG</h2>
+
                 <div class="ServiceBox">
+                    <h3>THE GLOOM</h3>
                     <p>Sorry, i'm worn out...<br>
                         Wait for confessing my sin,<br>
                         concealing them all.<br>
                         Let the World dissolve my gloom,<br>
                         i'll fix this Page's Service later... </p>
                 </div>
-            </article>
-
-            <article id="debug">
-                <h2 class="major">DEBUG</h2>
 
                 <div class="ServiceBox">
                     <h3>status 🤖</h3>
