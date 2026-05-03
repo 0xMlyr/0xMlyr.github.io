@@ -96,12 +96,20 @@ function updateScreenSize() {
     if (el) el.textContent = `${window.screen.width} x ${window.screen.height} px`;
 }
 
+function formatIP(ip) {
+    // IPv6 地址包含冒号，且通常较长，截断显示前12个字符
+    if (ip.includes(':') && ip.length > 12) {
+        return ip.substring(0, 12) + '...';
+    }
+    return ip;
+}
+
 async function getIPAddress() {
     try {
         const response = await fetch("https://api.suyanw.cn/api/ip.php");
         const ip = await response.text();
         const el = document.getElementById("ipAddress");
-        if (el) el.textContent = ip;
+        if (el) el.textContent = formatIP(ip);
         getIPLocation(ip);
         recordVisit(ip);
     } catch (error) {
@@ -133,9 +141,8 @@ function updateTime() {
         String(now.getHours()).padStart(2, '0') + ':' + 
         String(now.getMinutes()).padStart(2, '0') + ':' + 
         String(now.getSeconds()).padStart(2, '0') + 
-        ' (UTC' + (now.getTimezoneOffset() > 0 ? '-' : '+') + 
-        String(Math.abs(Math.floor(now.getTimezoneOffset() / 60))).padStart(2, '0') + ':' + 
-        String(Math.abs(now.getTimezoneOffset() % 60)).padStart(2, '0') + ')';
+        ' (UTC' + (now.getTimezoneOffset() > 0 ? '-' : '+') +
+        Math.abs(Math.floor(now.getTimezoneOffset() / 60)) + ')';
     const el = document.getElementById('sysTime');
     if (el) el.textContent = timeString;
 }
