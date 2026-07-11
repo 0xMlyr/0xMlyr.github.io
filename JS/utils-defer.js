@@ -97,9 +97,9 @@ function updateScreenSize() {
 }
 
 function formatIP(ip) {
-    // IPv6 地址包含冒号，且通常较长，截断显示前12个字符
-    if (ip.includes(':') && ip.length > 12) {
-        return ip.substring(0, 12) + '...';
+    // IPv6 地址包含冒号，且通常较长，截断显示前16个字符
+    if (ip.includes(':') && ip.length > 16) {
+        return ip.substring(0, 16) + '...';
     }
     return ip;
 }
@@ -179,6 +179,37 @@ function updateVisitCount(count) {
     if (el) el.textContent = count;
 }
 
+function copyToClipboard(text, successMsg, errorMsg) {
+    successMsg = successMsg || '已复制到剪贴板';
+    errorMsg = errorMsg || '复制失败';
+    navigator.clipboard.writeText(text)
+        .then(() => { if (window.showToast) showToast(successMsg); })
+        .catch(() => { if (window.showToast) showToast(errorMsg); });
+}
+
+function initInfoCopy() {
+    const container = document.getElementById('infoContainer');
+    if (!container) return;
+
+    const items = container.querySelectorAll('p');
+    items.forEach(item => {
+        item.style.cursor = 'pointer';
+        item.style.userSelect = 'none';
+        item.title = '点击复制';
+
+        item.addEventListener('click', function() {
+            const span = this.querySelector('span');
+            if (!span) return;
+
+            const label = this.textContent.replace(span.textContent, '').trim();
+            const value = span.textContent.trim();
+            const textToCopy = `${label}${value}`;
+
+            copyToClipboard(textToCopy);
+        });
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     getBrowserAndOSInfo();
     updateScreenSize();
@@ -186,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTime();
     setInterval(updateTime, 1000);
     getVisitCount();
+    initInfoCopy();
 });
 
 // ========== Last Updated (GitHub API with 1h cache) ==========

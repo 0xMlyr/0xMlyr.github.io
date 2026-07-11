@@ -16,6 +16,9 @@
     <link rel="dns-prefetch" href="https://music.163.com">
     <link rel="dns-prefetch" href="https://p1.music.126.net">
 
+    <!-- 10月17日黑白化纪念 -->
+    <script>(function () { var d = new Date(); if (d.getMonth() === 9 && d.getDate() === 17) document.documentElement.style.filter = 'grayscale(100%)'; })();</script>
+
     <!-- 资源预加载 -->
     <link rel="preload" href="./IMG/head.webp" as="image">
     <link rel="preload" href="./CSS/main.css" as="style">
@@ -227,10 +230,7 @@
 
                 <script>
                     window.copyEmail = function () {
-                        const email = atob('c3VwcG9ydEBtbHlyLmNvbQ==');
-                        navigator.clipboard.writeText(email)
-                            .then(() => { if (window.showToast) showToast('已复制到剪贴板'); })
-                            .catch(() => { if (window.showToast) showToast('复制失败'); });
+                        copyToClipboard(atob('c3VwcG9ydEBtbHlyLmNvbQ=='));
                     };
                 </script>
 
@@ -255,7 +255,8 @@
                     <p>IP归属地：<span id="ipLocation"></span></p>
                 </div>
 
-                <p style="font-size: 0.6rem; opacity: 0.3; margin-bottom: 2rem; margin-top: 1rem;">本站可能会记录访客档案以优化SEO,可在控制台查看详细信息。<br>
+                <p style="font-size: 0.6rem; opacity: 0.3; margin-bottom: 2rem; margin-top: 1rem;">
+                    本站可能会记录访客档案以优化SEO,可在控制台查看详细信息。<br>
                     <span id="userAgentInfo"></span>
                 </p>
             </article>
