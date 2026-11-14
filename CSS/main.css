@@ -1486,6 +1486,56 @@ body.is-preload #footer {
 	line-height: 1.5;
 }
 
+/* Motto / slogan */
+.motto {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	padding: 2.4rem 1.5rem;
+	margin: 1rem 0 0 0;
+	background-color: #000000;
+	border-radius: 4px;
+	line-height: 1.4;
+}
+
+.motto-line {
+	color: #ffffff;
+}
+
+.motto-sep {
+	color: #b3b3b3;
+}
+
+/* Reusable breathing light effect (requires a black background) */
+.breathe {
+	color: #b3b3b3;
+	animation: breathe 2.4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+
+	0%,
+	100% {
+		color: #000000;
+		text-shadow: none;
+	}
+
+	50% {
+		color: #b3b3b3;
+		text-shadow: 0 0 6px rgba(255, 255, 255, 0.75);
+	}
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.breathe {
+		animation: none;
+	}
+}
+
 .toollist {
 	height: 44px;
 	width: 145px;
