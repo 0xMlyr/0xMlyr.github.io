@@ -3,7 +3,7 @@
   <channel>
     <title>MLYR's WebSite</title>
     <link>https://www.mlyr.top</link>
-    <description>慕灵一儒(MLYR)的个人门户网站 - 风雨暗千家·诗酒趁年华。提供博客、网盘、导航等服务。</description>
+    <description>慕灵一儒(MLYR)的个人门户网站 - 风雨暗千家·诗酒趁年华。提供博客、术语翻译等服务。</description>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 13 Nov 2026 21:59:46 +0800</lastBuildDate>
     <atom:link href="https://www.mlyr.top/rss.xml" rel="self" type="application/rss+xml"/>
@@ -35,14 +35,6 @@
       <description>文字是颗粒状的照片 - 个人博客服务</description>
       <pubDate>Fri, 13 Nov 2026 21:59:46 +0800</pubDate>
       <guid>https://blog.db.mlyr.top/</guid>
-    </item>
-
-    <item>
-      <title>自用网盘</title>
-      <link>https://alist.api.mlyr.top</link>
-      <description>由alist驱动的共享网盘服务</description>
-      <pubDate>Fri, 13 Nov 2026 21:59:46 +0800</pubDate>
-      <guid>https://alist.api.mlyr.top</guid>
     </item>
 
     <item>
