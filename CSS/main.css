@@ -1496,7 +1496,7 @@ body.is-preload #footer {
 	width: 100%;
 	padding: 2.4rem 1.5rem;
 	margin: 1rem 0 0 0;
-	background-color: #000000;
+	background-color: #15171a;
 	border-radius: 4px;
 	line-height: 1.4;
 }
@@ -1509,7 +1509,7 @@ body.is-preload #footer {
 	color: #b3b3b3;
 }
 
-/* Reusable breathing light effect (requires a black background) */
+/* Reusable breathing light effect (matches the card background #15171a) */
 .breathe {
 	color: #b3b3b3;
 	animation: breathe 2.4s ease-in-out infinite;
@@ -1519,7 +1519,7 @@ body.is-preload #footer {
 
 	0%,
 	100% {
-		color: #000000;
+		color: #15171a;
 		text-shadow: none;
 	}
 
